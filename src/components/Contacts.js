@@ -136,8 +136,8 @@ const Contacts = () => {
             />
           </div>
   
-          <div className='max-w-96 bg-white mt-6 p-2 rounded-lg shadow-md text-start mb-8 md:max-w-2xl mx-auto hover:text-black'>
-            <img className='w-auto mx-auto mb-4' src={image20} alt='' />
+          <div className='max-w-80 bg-white mt-6 px-1 pb-6 rounded-lg shadow-md text-start mb-8 md:max-w-2xl mx-auto hover:text-black'>
+            <img className='md:w-auto md:mx-auto mb-4' src={image20} alt='' />
             <h2 className='text-5xl mt-3 roboto-thin mb-6'>Contact <span className='font-bold text-5xl roboto-thin text-black'>Us</span></h2>
             <form className='space-y-4' onSubmit={handleSubmit}>
               <div className='flex items-center'>
@@ -167,13 +167,13 @@ const Contacts = () => {
               </div>
               {emailError && <p className="text-red-500">{emailError}</p>}
               <div className='flex items-center'>
-                <label className='w-32  text-gray-500 font-semibold  roboto-thin' htmlFor='phone-number'>Phone Number</label>
+                <label className='md:w-32 text-gray-500 font-semibold  roboto-thin' htmlFor='phone-number'>Phone No</label>
                 <PhoneInput
                   country={'us'} // Default country
                   value={phoneNumber}
                   onChange={handlePhoneNumberChange}
-                  inputClass='flex-1 text-black border  rounded p-2'
-                  containerClass='flex -ml-3 md:ml-6 items-center'
+                  inputClass='flex-1  text-black border  rounded p-2'
+                  containerClass='flex max-w-20 ml-6 md:ml-6 items-center'
                   required
                 />
               </div>
