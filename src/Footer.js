@@ -34,20 +34,20 @@ const Footer = () => {
       <div className='bg-gradient-to-b from-slate-950 via-white to-slate-950 relative'>
         <div className='bg-slate-700 rounded-b-lg pb-6  md:flex justify-between p-6 leading-8'>
           <div className='text-white mt-4 text-start relative z-10'>
-            <img className='w-12 h-11 rounded-full ' src={logo} alt='Logo' />
+            <img className='w-12 h-11 rounded-full ' src={logo} alt='' />
             <h2 className='mt-2'>Osoro-Care-Club</h2>
             <h3 className='italic mt-2 mb-3'>Enlightening the society</h3>
-            <span className='leading-10 '>
-              <span>
-                <FontAwesomeIcon icon={faFacebook} className="p-2 rounded-sm bg-black hover:bg-red-700 mr-2" />
-              </span>
-              <span>
-                <FontAwesomeIcon icon={faInstagram} className="p-2 rounded-sm bg-black hover:bg-red-700 mr-2" />
-              </span>
-              <span>
-                <FontAwesomeIcon icon={faWhatsapp} className="p-2 rounded-sm bg-black hover:bg-red-700 mr-2" />
-              </span>
-            </span>
+            <div className='leading-10'>
+                  <a href='https://facebook.com' target='_blank' rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faFacebook} className="p-2 rounded-sm bg-black hover:bg-blue-700 mr-2" />
+                  </a>
+                  <a href='https://instagram.com' target='_blank' rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faInstagram} className="p-2 rounded-sm bg-black hover:bg-red-700 mr-2" />
+                  </a>
+                  <a href='https://whatsapp.com' target='_blank' rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faWhatsapp} className="p-2 rounded-sm bg-black hover:bg-green-700 mr-2" />
+                  </a>
+            </div>
           </div>
           <div className='text-white mt-3 text-start relative z-10'>
             <h2 className='first-letter:text-2x text-white text-xl font-bold relative pl-4'>
@@ -67,14 +67,16 @@ const Footer = () => {
               <span className='absolute left-0 top-1/2 transform -translate-y-1/2 w-1 h-full bg-red-700'></span>
               Get In Touch
             </h2>
-            <ul className='ml-4'>
-              <li><FontAwesomeIcon  icon={faMapMarker} className='mr-2  p-2 bg-black hover:bg-red-700 rounded-sm'/> South Mugirango</li>
-              <li className='ml-11'>South-Gucha District</li>
+            <ul className='ml-4 block'>
+              <li className='flex mt-2'><FontAwesomeIcon  icon={faMapMarker} className='mr-2  p-2 bg-black hover:bg-red-700 rounded-sm'/> South Mugirango</li>
+              <li className='ml-11'>Gucha South & Etago Sub County</li>
               <li className='ml-11'>Kisii County</li>
               <li className='ml-11'>Kenya</li>
             </ul>
-            <span className='ml-4 mr-2'><FontAwesomeIcon icon={faPhone} className='mr-1 bg-black p-2 hover:bg-red-700' /> +254708627172</span>
-            <h3 className='ml-4 mr-2'><FontAwesomeIcon icon={faEnvelope} className='mr-1 bg-black p-2 hover:bg-red-700' /> Osorocareclub@gmail.com</h3>
+            <div className='block items-center'>
+                <span className='ml-4 mr-2 flex mt-2 '><FontAwesomeIcon icon={faPhone} className='mr-1  bg-black p-2 hover:bg-red-700' /> +254724662381</span>
+                <h3 className='ml-4 mr-2 flex mt-4 '><FontAwesomeIcon icon={faEnvelope} className='mr-1 bg-black p-2 hover:bg-red-700' /> Osorocareclub@gmail.com</h3>
+            </div>
           </div>
         </div>
         <div className="absolute top-0 w-full h-16 overflow-hidden">

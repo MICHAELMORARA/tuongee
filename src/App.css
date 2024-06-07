@@ -16,6 +16,12 @@
 .custom-image {
   object-position: top center; /* Ensures the head is more centered and visible */
 }
+/* Specify Roboto as the default font family */
+.roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
 
 
 .App-header {
@@ -210,7 +216,7 @@ body {
 .purpose-section img {
   display: block;
   margin: 0 auto;
-  padding: 20px; /* Set the padding to match that of the core values */
+  padding: 30px; /* Set the padding to match that of the core values */
   border-radius: 100px; /* Add rounded corners */
   transition: padding 0.3s ease; /* Smooth transition for padding */
 }
@@ -238,7 +244,7 @@ body {
 }
 
 .image-container {
-  padding: 10px;
+  padding: 5px;
   background-color: white;
   border-radius: 100%;
   position: relative;
@@ -246,21 +252,22 @@ body {
 }
 
 .image-container img {
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 .image-container::before {
   content: '';
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 8px;
-  height: 8px;
+  top: 20px; /* Adjust the top position as needed */
+  right: 20px; /* Adjust the right position as needed */
+  width: 16px; /* Increase the size for better visibility */
+  height: 16px;
   background-color: red;
   border-radius: 50%;
   transform: translate(50%, -50%);
   z-index: 1;
 }
+
 
 .image-container:hover::before {
   background-color: darkred;
@@ -296,4 +303,73 @@ body {
   object-position: center; /* Centers the image */
 }
 
+.spinner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 4px solid #ffffff;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.testimonial-cardone {
+  position: relative;
+  padding-bottom: 1rem; /* Add padding to the bottom */
+  transition: background-color 0.5s ease, border-bottom-color 0.5s ease; /* Smooth transition for background color and border color */
+  border-bottom: 2px solid transparent; /* Default border color */
+}
+
+.testimonial-cardone:hover {
+  background-color:black; /* Slate-700 background color on hover */
+  border-bottom-color: red; /* Red border color on hover */
+  color: white; /* Text color on hover */
+}
+
+
+.testimonial-cardone:hover p,
+.testimonial-cardone:hover span,
+.testimonial-cardone:hover label,
+.testimonial-cardone:hover a,
+.testimonial-cardone:hover input,
+.testimonial-cardone:hover textarea {
+  color: black; /* Ensure all text elements have white color on hover */
+}
+
+
+
+.testimonial-cardone img {
+  transition: transform 0.5s ease; /* Smooth transition for image transform */
+  transform-origin: center; /* Set the transform origin to the center */
+}
+
+.testimonial-cardone:hover img {
+  transform: scale(1.05); /* Slightly enlarge the image on hover */
+}
+
+
+
+
+/* @import "slick-carousel/slick/slick.css"; 
+@import "slick-carousel/slick/slick-theme.css";
+@import Slider from "react-slick"; */

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Slider from "react-slick";
 import '../App.css';
 import image13 from "./images/image13.png";
@@ -8,8 +8,20 @@ import image16 from "./images/image16.png";
 import image17 from "./images/image17.png"; 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Oval } from 'react-loader-spinner'; // Import the Oval spinner component
 
 const Reviews = () => {
+  const [loading, setLoading] = useState(true); // State to track loading
+  useEffect(() => {
+    // Simulate a timeout for loading
+    const timeout = setTimeout(() => {
+      setLoading(false); // Set loading to false after timeout
+    }, 2000); // 2000 milliseconds = 2 seconds
+
+    // Clean up the timeout to avoid memory leaks
+    return () => clearTimeout(timeout);
+  }, []); // Run only once after component mounting
+
   const settings = {
     dots: true,
     infinite: true,
@@ -22,39 +34,59 @@ const Reviews = () => {
   };
 
   return (
+    <div className="relative h-screen w-screen md:mt-6">
     <div className="slider-container pt-40 pb-36 ">
-      <Slider {...settings} className='pb-4'>
-        <div>
-          <h2 className='text-black text-3xl font-bold text-center'>What Beneficiaries Say</h2>
-          <p className='italic mt-3'>With Osoro Care Club, I feel reassured and supported every step of the way. Their dedication to providing top-notch care is unmatched. I highly appreciate their commitment to our well-being.</p>
-          <img className='rounded-full w-44 h-44 mx-auto mt-7' src={image13} alt='images'/>
-          <h3 className='text-black font-semibold italic mt-8'>Mrs. Zipporah & Daughter</h3>
+      {loading && (
+        <div className="absolute inset-0 flex justify-center items-center bg-white" style={{ height: '100vh' }}>
+          {/* Display a red background and the Oval spinner */}
+          <div className="spinner-container">
+            <Oval
+              visible={true}
+              height={80}
+              width={80}
+              color="#ffffff"
+              ariaLabel="oval-loading"
+              wrapperStyle={{}}
+              wrapperClass=""
+            />
+          </div>
         </div>
-        <div>
-          <h2 className='text-black text-2xl font-bold text-center'>What Beneficiaries Say</h2>
-          <p className='italic mt-3'>Thanks to our able Hon. Sylivanus Osoro, we feel more secure and well-cared for every day for inventing Osoro-Care-Club.</p>
-          <img className='rounded-full w-44 h-44 mx-auto mt-7' src={image14} alt='images'/>
-          <h3 className='text-black font-semibold italic mt-8'>Eliud</h3>
-        </div>
-        <div>
-          <h2 className='text-black text-2xl font-bold text-center'>What Beneficiaries Say</h2>
-          <p className='italic mt-3'>Osoro Care Club has profoundly impacted our family's well-being, offering unparalleled support and care. Their dedication and professionalism are truly exceptional. We couldn't be happy without their service.</p>
-          <img className='rounded-full w-44 h-44 mx-auto mt-7' src={image15} alt='images'/>
-          <h3 className='text-black font-semibold mt-8'>Top Achievers</h3>
-        </div>
-        <div>
-          <h2 className='text-black text-2xl font-bold text-center'>What Beneficiaries Say</h2>
-          <p className='italic mt-3'>The level of care and support we receive from Osoro Care Club is extraordinary. Their professional and compassionate approach has truly enhanced our lives. We couldn't ask for better service.</p>
-          <img className='rounded-full w-44 h-44 mx-auto mt-7' src={image16} alt='images'/>
-          <h3 className='text-black font-semibold italic mt-8'>Warren</h3>
-        </div>
-        <div>
-          <h2 className='text-black text-2xl font-bold text-center'>What Beneficiaries Say</h2>
-          <p className='italic mt-3'>Dear Beneficiaries, Your trust and satisfaction inspire our relentless commitment to excellence. We are profoundly grateful for your continued support and look forward to serving you with unwavering dedication and care.Warm regards,</p>
-          <img className='rounded-full w-44 h-44 mx-auto mt-7' src={image17} alt='images'/>
-          <h3 className='text-black font-semibold italic mt-8'>Hon. Sylivanus Onyiego Osoro</h3>
-        </div>
-      </Slider>
+      )}
+      {!loading && (
+        <Slider {...settings}>
+          <div className=' roboto-thin'>
+            <h2 className='text-black text-3xl  font-bold text-center'>What Beneficiaries Say</h2>
+            <p className='italic mt-3'>With Osoro Care Club, I feel reassured and supported every step of the way. Their dedication to providing top-notch care is unmatched. I highly appreciate their commitment to our well-being.</p>
+            <img className='rounded-full w-44 h-44 mx-auto mt-7' src={image13} alt=''/>
+            <h3 className='text-black font-semibold italic mt-8'>Mrs. Zipporah & Daughter</h3>
+          </div>
+          <div className=' roboto-thin'>
+            <h2 className='text-black text-2xl font-bold text-center'>What Beneficiaries Say</h2>
+            <p className='italic mt-3'>Thanks to our able Hon. Silvanus Osoro, we feel more secure and well-cared for every day for inventing Osoro-Care-Club.</p>
+            <img className='rounded-full w-44 h-44 mx-auto mt-7' src={image14} alt=''/>
+            <h3 className='text-black font-semibold italic mt-8'>Mr. Brian </h3>
+          </div>
+          <div className=' roboto-thin'>
+            <h2 className='text-black text-2xl font-bold text-center'>What Beneficiaries Say</h2>
+            <p className='italic mt-3'>Osoro Care Club has profoundly impacted our family's well-being, offering unparalleled support and care. Their dedication and professionalism are truly exceptional. We couldn't be happy without their service.</p>
+            <img className='rounded-full w-44 h-44 mx-auto mt-7' src={image15} alt=''/>
+            <h3 className='text-black font-semibold mt-8'>Top Achievers</h3>
+          </div>
+          <div className=' roboto-thin'>
+            <h2 className='text-black text-2xl font-bold text-center'>What Beneficiaries Say</h2>
+            <p className='italic mt-3'>The level of care and support we receive from Osoro Care Club is extraordinary. Their professional and compassionate approach has truly enhanced our lives. We couldn't ask for better service.</p>
+            <img className='rounded-full w-44 h-44 mx-auto mt-7' src={image16} alt=''/>
+            <h3 className='text-black font-semibold italic mt-8'>OCPD Thomas</h3>
+          </div>
+          <div className=' roboto-thin'>
+            <h2 className='text-black text-2xl font-bold text-center'>What Beneficiaries Say</h2>
+            <p className='italic mt-3'>Dear Beneficiaries, Your trust and satisfaction inspire our relentless commitment to excellence. We are profoundly grateful for your continued support and look forward to serving you with unwavering dedication and care. Warm regards,</p>
+            <img className='rounded-full w-44 h-44 mx-auto mt-7' src={image17} alt=''/>
+            <h3 className='text-black font-semibold italic mt-8'>Hon. Silvanus Onyiego Osoro</h3>
+          </div>
+        </Slider>
+      )}
+    </div>
     </div>
   );
 }
