@@ -13,11 +13,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className='bg-gradient-to-r from-slate-700 to bg-black p-4 fixed top-0 w-full z-50'>
+    <nav className='bg-gradient-to-r from-slate-700 to bg-black p-4 roboto-thin  text-lg fixed top-0 w-full z-50'>
       <div className='container mx-auto flex justify-between items-center'>
         <div className='flex items-center'>
-          <img className='w-12 h-11 rounded-full ' src={logo} alt='logo'/>
-          <h1 className='ml-2 text-white'>Osoro-Care-Club</h1>
+          <img className='w-12 h-11 rounded-full ' src={logo} alt=''/>
+          <h1 className='ml-2  text-white'>Hon. Osoro-Care-Club</h1>
         </div>
         <div className='hidden md:flex space-x-4 bg-slate-800 rounded-full p-4'>
           <Link className='text-white hover:text-amber-300' to="/home">Home</Link>
