@@ -167,7 +167,7 @@ const Contacts = () => {
               </div>
               {emailError && <p className="text-red-500">{emailError}</p>}
               <div className='flex items-center'>
-                <label className='w-32  text-gray-500 font-semibold  roboto-thin' htmlFor='phone-number'>Phone Number</label>
+                <label className='w-32  text-gray-500 font-semibold  roboto-thin' htmlFor='phone-number'>Phone No</label>
                 <PhoneInput
                   country={'us'} // Default country
                   value={phoneNumber}
