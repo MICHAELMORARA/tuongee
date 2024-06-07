@@ -132,11 +132,11 @@ const Contacts = () => {
             <img 
               src={image18} 
               alt="" 
-              className="object-cover w-full" 
+              className="md:object-cover md:w-full" 
             />
           </div>
   
-          <div className=' bg-white mt-6 p-6 rounded-lg shadow-md text-start mb-8 max-w-2xl mx-auto hover:text-black'>
+          <div className=' w-screen pb-8 md:pb-4 p-6 bg-white mt-6 md:p-6 rounded-lg shadow-md text-start mb-8 md:max-w-2xl mx-auto hover:text-black'>
             <img className='w-auto mx-auto mb-4' src={image20} alt='' />
             <h2 className='text-5xl mt-3 roboto-thin mb-6'>Contact <span className='font-bold text-5xl roboto-thin text-black'>Us</span></h2>
             <form className='space-y-4' onSubmit={handleSubmit}>
@@ -156,7 +156,7 @@ const Contacts = () => {
               <div className='flex items-center'>
                 <label className='w-32  text-gray-500 font-semibold  roboto-thin' htmlFor='email'>Email</label>
                 <input
-                  className='flex-1 text-black border rounded p-2'
+                  className='flex-1 text-black border rounded p-2 '
                   type='email'
                   id='email'
                   name='email'
@@ -167,13 +167,13 @@ const Contacts = () => {
               </div>
               {emailError && <p className="text-red-500">{emailError}</p>}
               <div className='flex items-center'>
-                <label className='w-32  text-gray-500 font-semibold  roboto-thin' htmlFor='phone-number'>Phone Number</label>
+                <label className='w-32  text-gray-500 font-semibold  roboto-thin' htmlFor='phone-number'>Phone No</label>
                 <PhoneInput
                   country={'us'} // Default country
                   value={phoneNumber}
                   onChange={handlePhoneNumberChange}
                   inputClass='flex-1 text-black border  rounded p-2'
-                  containerClass='flex ml-9 md:ml-6 items-center'
+                  containerClass='flex w-11  items-center'
                   required
                 />
               </div>
