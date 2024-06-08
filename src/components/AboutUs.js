@@ -68,8 +68,8 @@ const AboutUs = () => {
           <div className="spinner-container">
             <Oval
               visible={true}
-              height={80}
-              width={80}
+              height={60}
+              width={60}
               color="#ffffff"
               ariaLabel="oval-loading"
               wrapperStyle={{}}

@@ -116,8 +116,8 @@ const Contacts = () => {
           <div className="spinner-container">
             <Oval
               visible={true}
-              height={80}
-              width={80}
+              height={60}
+              width={60}
               color="#ffffff"
               ariaLabel="oval-loading"
               wrapperStyle={{}}
@@ -136,12 +136,12 @@ const Contacts = () => {
             />
           </div>
   
-          <div className='max-w-80 bg-white mt-6 px-0 pb-6 rounded-lg shadow-md text-start mb-8 md:max-w-2xl mx-auto hover:text-black'>
+          <div className='max-w-80 bg-white mt-6 px-2 pb-6 rounded-lg shadow-md text-start mb-8 md:max-w-2xl mx-auto hover:text-black'>
             <img className='md:w-auto md:mx-auto mb-4' src={image20} alt='' />
             <h2 className='text-5xl mt-3 roboto-thin mb-6'>Contact <span className='font-bold text-5xl roboto-thin text-black'>Us</span></h2>
             <form className='space-y-4' onSubmit={handleSubmit}>
               <div className='flex items-center'>
-                <label className='w-32  text-gray-500 font-semibold roboto-thin' htmlFor='full-name'>Full Name</label>
+                <label className='w-20  text-gray-500 font-semibold roboto-thin' htmlFor='full-name'>Full Name</label>
                 <input
                   className='flex-1 border text-black rounded p-2'
                   type='text'
@@ -154,7 +154,7 @@ const Contacts = () => {
               </div>
               {fullNameError && <p className="text-red-500">{fullNameError}</p>}
               <div className='flex items-center'>
-                <label className='w-32  text-gray-500 font-semibold  roboto-thin' htmlFor='email'>Email</label>
+                <label className='w-20  text-gray-500 font-semibold  roboto-thin' htmlFor='email'>Email</label>
                 <input
                   className='flex-1 text-black border rounded p-2'
                   type='email'
@@ -167,19 +167,19 @@ const Contacts = () => {
               </div>
               {emailError && <p className="text-red-500">{emailError}</p>}
               <div className='flex items-center'>
-                <label className='md:w-32 text-gray-500 font-semibold  roboto-thin' htmlFor='phone-number'>Phone</label>
+                <label className='w-20 text-gray-500 font-semibold  roboto-thin' htmlFor='phone-number'>Phone Number</label>
                 <PhoneInput
                   country={'us'} // Default country
                   value={phoneNumber}
                   onChange={handlePhoneNumberChange}
-                  inputClass='flex-1  text-black border  rounded p-2'
-                  containerClass='flex max-w-20 md:max-w-32 ml-2 md:-ml-0 items-center'
+                  inputClass='text-black border rounded  '
+                  containerClass='flex max-w-6 '
                   required
                 />
               </div>
               {phoneNumberError && <p className="text-red-500">{phoneNumberError}</p>}
               <div className='flex items-center'>
-                <label className='w-32  text-gray-500 font-semibold  roboto-thin ' htmlFor='subject'>Subject</label>
+                <label className='w-20  text-gray-500 font-semibold  roboto-thin ' htmlFor='subject'>Subject</label>
                 <input
                   className='flex-1 text-black border rounded p-2'
                   type='text'
@@ -190,7 +190,7 @@ const Contacts = () => {
                   required/>
               </div>
               <div className='flex items-center'>
-                <label className='w-32  text-gray-500 font-semibold roboto-thin' htmlFor='message'>Enter Your Message</label>
+                <label className='w-20  text-gray-500 font-semibold roboto-thin' htmlFor='message'>Enter Your Message</label>
                 <textarea
                   className='flex-1 text-black border rounded p-2'
                   id='message'
