@@ -167,13 +167,13 @@ const Contacts = () => {
               </div>
               {emailError && <p className="text-red-500">{emailError}</p>}
               <div className='flex items-center'>
-                <label className='w-20 text-gray-500 font-semibold  roboto-thin' htmlFor='phone-number'>Phone Number</label>
+                <label className='w-16 text-gray-500 font-semibold  roboto-thin' htmlFor='phone-number'>Phone Number</label>
                 <PhoneInput
                   country={'us'} // Default country
                   value={phoneNumber}
                   onChange={handlePhoneNumberChange}
                   inputClass='text-black border rounded  '
-                  containerClass='flex max-w-6 '
+                  containerClass='flex max-w-4 '
                   required
                 />
               </div>
