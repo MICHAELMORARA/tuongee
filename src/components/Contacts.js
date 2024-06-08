@@ -127,7 +127,7 @@ const Contacts = () => {
         </div>
       )}
       {!loading && (
-        <>
+        <div className='bg-slate-50'>
           <div className="flex-grow">
             <img 
               src={image18} 
@@ -217,7 +217,7 @@ const Contacts = () => {
               </div>
             </form>
           </div>
-        </>
+        </div>
       )}
     </div>
   );
