@@ -174,7 +174,7 @@ const Contacts = () => {
                   value={phoneNumber}
                   onChange={handlePhoneNumberChange}
                   inputClass='text-black border rounded  '
-                  containerClass='flex max-w-4 '
+                  containerClass='flex max-w-4 md:ml-4'
                   required
                 />
               </div>
@@ -191,7 +191,7 @@ const Contacts = () => {
                   required/>
               </div>
               <div className='flex items-center'>
-                <label className='w-20  text-gray-500 font-semibold roboto-thin' htmlFor='message'>Enter Your Message</label>
+                <label className='w-24  text-gray-500 font-semibold roboto-thin' htmlFor='message'>Enter Your Message</label>
                 <textarea
                   className='flex-1 text-black border rounded p-2'
                   id='message'
