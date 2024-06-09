@@ -83,7 +83,7 @@ const Contacts = () => {
       formData.append('file', file);
     }
   
-    fetch('http://localhost:5000/send', {
+    fetch('https://contact-form-backend-virid.vercel.app/', {
       method: 'POST',
       body: formData,
     })
