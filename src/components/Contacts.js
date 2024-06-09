@@ -191,7 +191,7 @@ const Contacts = () => {
                   required/>
               </div>
               <div className='flex items-center'>
-                <label className='w-24  text-gray-500 font-semibold roboto-thin' htmlFor='message'>Enter Your Message</label>
+                <label className='w-20  text-gray-500 font-semibold roboto-thin' htmlFor='message'>Enter Your Message</label>
                 <textarea
                   className='flex-1 text-black border rounded p-2'
                   id='message'
@@ -203,7 +203,7 @@ const Contacts = () => {
                 ></textarea>
               </div>
               <div className='flex items-center'>
-                <label className='w-32 text-gray-500 font-semibold roboto-thin ' htmlFor='attachment'>Attach File</label>
+                <label className='w-28 text-gray-500 font-semibold roboto-thin ' htmlFor='attachment'>Attach File</label>
                 <input
                   type="file"
                   id="attachment"
