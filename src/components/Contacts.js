@@ -83,7 +83,7 @@ const Contacts = () => {
       formData.append('file', file);
     }
   
-    fetch('https://contact-form-backend-virid.vercel.app/', {
+    fetch('https://contact-form-backend-8vleqb8qp-michaelmoraras-projects.vercel.app', {
       method: 'POST',
       body: formData,
     })
