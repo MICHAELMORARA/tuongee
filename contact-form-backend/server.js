@@ -21,10 +21,10 @@ const transporter = nodemailer.createTransport({
   service: "gmail",
   host: "smtp.gmail.com",
   port: 465,
-  secure: true, // true for 465, false for other ports
+  secure: true,
   auth: {
-    user: 'michaelmorara12@gmail.com', // Hardcoded email for testing
-    pass: 'sehbjmvdcnmbernv',           // Hardcoded password for testing
+    user: process.env.EMAIL_USER, // Use environment variable
+    pass: process.env.EMAIL_PASS, // Use environment variable
   },
   tls: {
     rejectUnauthorized: false
@@ -34,13 +34,13 @@ const transporter = nodemailer.createTransport({
 // Endpoint to handle form submissions
 app.post('/send', upload.single('file'), (req, res) => {
   console.log('Request received:', req.body);
-  console.log('File received:', req.file); // Log file details
+  console.log('File received:', req.file);
   const { fullName, email, phoneNumber, subject, message } = req.body;
   const file = req.file;
 
   const mailOptions = {
-    from: `${fullName} <${email}>`, // Sender address
-    to: 'michaelmorara12@gmail.com',   // Receiver address
+    from: `${fullName} <${email}>`,
+    to: process.env.EMAIL_USER, // Use environment variable
     subject: subject,
     text: `
       Name: ${fullName}
@@ -66,6 +66,11 @@ app.post('/send', upload.single('file'), (req, res) => {
     console.log('Email sent:', info.response);
     res.status(200).json({ message: 'Email sent: ' + info.response });
   });
+});
+
+// Root route
+app.get('/', (req, res) => {
+  res.send('Welcome to the Contact Form Backend!');
 });
 
 // Start the server
