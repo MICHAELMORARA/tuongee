@@ -83,10 +83,11 @@ const Contacts = () => {
       formData.append('file', file);
     }
   
-    fetch('https://contact-form-backend-kappa.vercel.app/', {
+    fetch('https://contact-form-backend-kappa.vercel.app/send', {
       method: 'POST',
       body: formData,
     })
+    
       .then(response => response.json())
       .then(data => {
         console.log('Response from server:', data); // Log server response
