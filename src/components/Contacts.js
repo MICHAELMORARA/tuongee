@@ -10,6 +10,7 @@ import 'react-phone-input-2/lib/style.css'; // Import the styles for the react-p
 
 const Contacts = () => {
   const [loading, setLoading] = useState(true);
+  const [submitting, setSubmitting] = useState(false); // State for form submission spinner
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -72,7 +73,9 @@ const Contacts = () => {
       setPhoneNumberError('Please enter your phone number.');
       return;
     }
-  
+
+    setSubmitting(true); // Set the submitting state to true
+
     const formData = new FormData();
     formData.append('fullName', fullName);
     formData.append('email', email);
@@ -82,34 +85,39 @@ const Contacts = () => {
     if (file) {
       formData.append('file', file);
     }
-  
+
     fetch('https://contact-form-backend-kappa.vercel.app/send', {
       method: 'POST',
       body: formData,
     })
-    
       .then(response => response.json())
       .then(data => {
-        console.log('Response from server:', data); // Log server response
-        if (data.message) {
-          window.alert('Submitted Successfully');
-        } else {
-          window.alert('Submission Failed. Please try again.');
-        }
-        // Reset form fields
-        setFullName('');
-        setEmail('');
-        setPhoneNumber('');
-        setSubject('');
-        setMessage('');
-        setFile(null);
+        setTimeout(() => {
+          setSubmitting(false); // Set the submitting state to false
+          console.log('Response from server:', data); // Log server response
+          if (data.message) {
+            window.alert('Submitted Successfully');
+          } else {
+            window.alert('Submission Failed. Please try again.');
+          }
+          // Reset form fields
+          setFullName('');
+          setEmail('');
+          setPhoneNumber('');
+          setSubject('');
+          setMessage('');
+          setFile(null);
+        }, 2000); // Delay of 2 seconds before showing the result
       })
       .catch(error => {
-        console.error('Error:', error); // Log error
-        window.alert('Submission failed. Please try again.');
+        setTimeout(() => {
+          setSubmitting(false); // Set the submitting state to false
+          console.error('Error:', error); // Log error
+          window.alert('Submission failed. Please try again.');
+        }, 2000); // Delay of 2 seconds before showing the result
       });
   };
-  
+
   return (
     <div className="flex flex-col min-h-screen">
       {loading && (
@@ -119,7 +127,7 @@ const Contacts = () => {
               visible={true}
               height={60}
               width={60}
-              color="#ffffff"
+              color="#000000"
               ariaLabel="oval-loading"
               wrapperStyle={{}}
               wrapperClass=""
@@ -129,6 +137,19 @@ const Contacts = () => {
       )}
       {!loading && (
         <div className='bg-slate-50'>
+          {submitting && (
+            <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
+              <Oval
+                visible={true}
+                height={60}
+                width={60}
+                color="#ffffff"
+                ariaLabel="oval-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+              />
+            </div>
+          )}
           <div className="flex-grow">
             <img 
               src={image18} 
@@ -173,7 +194,7 @@ const Contacts = () => {
                   country={'us'} // Default country
                   value={phoneNumber}
                   onChange={handlePhoneNumberChange}
-                  inputClass='text-black border rounded  '
+                  inputClass='text-black border                   rounded  '
                   containerClass='flex max-w-4 md:ml-4'
                   required
                 />
@@ -211,9 +232,23 @@ const Contacts = () => {
                   onChange={handleFileChange}
                   accept=".pdf,.doc,.docx,.ppt,.pptx,.png,.svg,.xls,.xlsx"/>
               </div>
-              <div className="button-hover-effect  font-bold mt-6 w-40 bg-slate-700 hover:text-white hover:bg-slate-800 px-4 py-4 mb-4 rounded-sm">
-                <button type='submit'>
-                <span className='roboto-thin text-xs font-bold'>SEND MESSAGE <FontAwesomeIcon icon={faArrowRight} className='p-1 text-black bg-white hover:bg-slate-800 rounded-full' /></span>
+              <div className="button-hover-effect font-bold mt-6 w-40 bg-slate-700 hover:text-white hover:bg-slate-800 px-4 py-4 mb-4 rounded-sm">
+                <button type='submit' disabled={submitting}>
+                  {submitting ? (
+                    <Oval
+                      visible={true}
+                      height={20}
+                      width={20}
+                      color="#ffffff"
+                      ariaLabel="oval-loading"
+                      wrapperStyle={{}}
+                      wrapperClass=""
+                    />
+                  ) : (
+                    <span className='roboto-thin text-xs font-bold'>
+                      SEND MESSAGE <FontAwesomeIcon icon={faArrowRight} className='p-1 text-black bg-white hover:bg-slate-800 rounded-full' />
+                    </span>
+                  )}
                 </button>
               </div>
             </form>
@@ -225,3 +260,4 @@ const Contacts = () => {
 }
 
 export default Contacts;
+
