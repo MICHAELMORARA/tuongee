@@ -70,7 +70,7 @@ const AboutUs = () => {
               visible={true}
               height={60}
               width={60}
-              color="#ffffff"
+              color="black"
               ariaLabel="oval-loading"
               wrapperStyle={{}}
               wrapperClass=""
