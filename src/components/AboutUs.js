@@ -104,14 +104,14 @@ const AboutUs = () => {
               </Link>
             </div>
           </div>
-          <div className='testimonial-card roboto-thin bg-slate-50 flex flex-col items-center justify-center text-center py-10 px-4 fade-in fade-in-active'>
+          <div className='testimonial-card p-6 m-4 rounded-lg roboto-thin bg-slate-50 flex flex-col items-center justify-center text-center px-4 fade-in fade-in-active'>
             <img 
               className='rounded-full md:w-64 w-64 md:h-64 h-64 mb-4' 
               src={image1} 
               alt=''
             />
-            <h2 className='font-semibold'>Promoting scholarly achievement.</h2>
-            <p className='text-center'>
+            <h2 className='font-semibold text-xl w-80'>Promoting scholarly achievement.</h2>
+            <p className='text-center w-72'>
               Hon. Osoro care club through NGCDF South Mugirango Constituency we are dedicated to nurturing the potential of students who face financial hardships yet demonstrate exceptional academic promise. We are committed to providing these deserving individuals with the resources they need to succeed, ensuring that financial barriers do not hinder their educational aspirations. Through our comprehensive support system, we offer scholarships, mentoring, and essential educational tools to help students thrive academically and personally. We believe in the transformative power of education and are committed to fostering a community where every student has the opportunity to achieve their dreams and contribute meaningfully to society. Join us in our mission to empower the next generation of leaders and innovators.
             </p>
           </div>
