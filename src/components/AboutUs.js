@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faStar } from '@fortawesome/free-solid-svg-icons';
-import {Rings  } from 'react-loader-spinner';
+import { faArrowRight, faVideo, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faFacebook, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { Rings } from 'react-loader-spinner';
+import Modal from 'react-modal';
 
 import about from './images/about.png';
 import image1 from './images/image1.png';
@@ -14,6 +16,8 @@ import image6 from './images/image6.png';
 import image7 from './images/image7.png';
 import image8 from './images/image8.png';
 
+Modal.setAppElement('#root');
+
 const AboutUs = () => {
   const [loading, setLoading] = useState(true);
   const [rating, setRating] = useState({
@@ -21,6 +25,7 @@ const AboutUs = () => {
     students: 0,
     support: 0
   });
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   useEffect(() => {
     const section = document.querySelector('.fade-in-up');
@@ -60,6 +65,14 @@ const AboutUs = () => {
 
     return () => clearTimeout(timeout);
   }, []);
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
 
   return (
     <div>
@@ -104,14 +117,33 @@ const AboutUs = () => {
               </Link>
             </div>
           </div>
-          <div className='testimonial-card p-6 m-4 rounded-lg roboto-thin bg-slate-50 flex flex-col items-center justify-center text-center px-4 fade-in fade-in-active'>
-            <img 
-              className='rounded-full md:w-64 w-64 md:h-64 h-64 mb-4' 
-              src={image1} 
-              alt=''
-            />
-            <h2 className='font-semibold text-xl w-80'>Promoting scholarly achievement.</h2>
-            <p className='text-center w-72'>
+          <div className='testimonial-card p-6 m-4 rounded-lg roboto-thin bg-white shadow-md flex flex-col items-center justify-center text-center px-4 fade-in fade-in-active'>
+            <div className='relative'>
+              <img 
+                className='rounded-full md:w-64 w-64 md:h-64 h-64 mb-4' 
+                src={image1} 
+                alt=''
+              />
+              <div className='absolute inset-0 flex justify-center items-center'>
+                <div className='relative w-64 h-64'>
+                <a href='https://whatsapp.com' target='_blank' rel="noopener noreferrer">
+                     <FontAwesomeIcon icon={faFacebook} className='absolute bg-slate-700 hover:bg-red-700 rounded-full p-2 text-white text-3xl top-48 left-9 transform -translate-x-1/2' />
+                 </a> 
+                 <a href='https://whatsapp.com' target='_blank' rel="noopener noreferrer"> 
+                     <FontAwesomeIcon icon={faInstagram} className='absolute bg-slate-700 hover:bg-red-700 rounded-full p-2 text-white text-3xl right-5 top-52  transform -translate-y-1/2' />
+                 </a>
+                 <button onClick={openModal}>
+                     <FontAwesomeIcon icon={faVideo}className='absolute text-white bg-slate-700 hover:bg-red-700 hover:text-white rounded-full p-9 md:p-12 text-3xl bottom-1/2 left-60 top-24 transform -translate-x-1/2 -translate-y-1/2'   />
+                     <h1 className='absolute bottom-1/2 left-60 text-white z-50 text-xs w-24 top-20 transform -translate-x-1/2 -translate-y-1/2'>Watch Video</h1>
+                 </button>
+                 <a href='https://whatsapp.com' target='_blank' rel="noopener noreferrer">
+                     <FontAwesomeIcon icon={faWhatsapp} className='absolute bg-slate-700 hover:bg-red-700 rounded-full p-2 text-white text-3xl -bottom-4 left-1/2 transform -translate-x-1/2' />
+                </a>
+                </div>
+              </div>
+            </div>
+            <h2 className='font-semibold mt-4'>Promoting scholarly achievement.</h2>
+            <p className='text-center'>
               Hon. Osoro care club through NGCDF South Mugirango Constituency we are dedicated to nurturing the potential of students who face financial hardships yet demonstrate exceptional academic promise. We are committed to providing these deserving individuals with the resources they need to succeed, ensuring that financial barriers do not hinder their educational aspirations. Through our comprehensive support system, we offer scholarships, mentoring, and essential educational tools to help students thrive academically and personally. We believe in the transformative power of education and are committed to fostering a community where every student has the opportunity to achieve their dreams and contribute meaningfully to society. Join us in our mission to empower the next generation of leaders and innovators.
             </p>
           </div>
@@ -213,10 +245,25 @@ const AboutUs = () => {
           </div>
         </div>
       )}
-   </div>
+
+      {/* Video Modal */}
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Video Modal"
+        className="modal"
+        overlayClassName="modal-overlay"
+      >
+        <div className="modal-content">
+          <button onClick={closeModal} className="close-button">Close</button>
+          <video width="100%" controls>
+            <source src="your-video-url.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </Modal>
+    </div>
   );
 }
 
 export default AboutUs;
-
-
