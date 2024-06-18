@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faStar } from '@fortawesome/free-solid-svg-icons';
-import { Oval } from 'react-loader-spinner';
+import {Rings  } from 'react-loader-spinner';
 
 import about from './images/about.png';
 import image1 from './images/image1.png';
@@ -56,22 +56,22 @@ const AboutUs = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 4000);
 
     return () => clearTimeout(timeout);
   }, []);
 
   return (
-    <div>
+    <div className="relative h-screen md:h-screen w-screen md:mt-6">
       {loading && (
-        <div className="fixed inset-0 flex justify-center items-center bg-white z-50">
+        <div className="fixed inset-0 flex justify-center items-center bg-black z-50">
           <div className="spinner-container">
-            <Oval
+            <Rings
               visible={true}
-              height={60}
-              width={60}
-              color="black"
-              ariaLabel="oval-loading"
+              height={100}
+              width={100}
+              color="white"
+              ariaLabel="rings-loading"
               wrapperStyle={{}}
               wrapperClass=""
             />
@@ -79,7 +79,7 @@ const AboutUs = () => {
         </div>
       )}
       {!loading && (
-        <>
+        <div className=''>
           <div className={`relative roboto-thin h-screen md:h-screen w-screen md:mt-6 fade-in ${!loading ? 'fade-in-active' : ''}`}>
             <img 
               src={about} 
@@ -208,10 +208,10 @@ const AboutUs = () => {
                 <img className='mx-auto w-32 h-32' src={image8} alt='' />
               </div>
               <h2 className='text-2xl'>Our Purpose</h2>
-              <p>To break barriers, ignite potential, and empower every student to succeed.</p>
+              <p className=''>To break barriers, ignite potential, and empower every student to succeed.</p>
             </div>
           </div>
-        </>
+        </div>
       )}
     </div>
   );

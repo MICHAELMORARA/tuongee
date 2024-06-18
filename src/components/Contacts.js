@@ -4,7 +4,7 @@ import image18 from "./images/image18.png";
 import image20 from "./images/image20.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { Oval } from 'react-loader-spinner';
+import { Rings } from 'react-loader-spinner';
 import PhoneInput from 'react-phone-input-2'; // Import the react-phone-input-2 component
 import 'react-phone-input-2/lib/style.css'; // Import the styles for the react-phone-input-2 component
 
@@ -24,7 +24,7 @@ const Contacts = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 4000);
 
     return () => clearTimeout(timeout);
   }, []);
@@ -121,14 +121,14 @@ const Contacts = () => {
   return (
     <div className="flex flex-col min-h-screen">
       {loading && (
-        <div className="flex justify-center items-center flex-grow bg-white">
+        <div className="flex justify-center items-center flex-grow bg-black">
           <div className="spinner-container">
-            <Oval
+            <Rings
               visible={true}
-              height={60}
-              width={60}
-              color="#000000"
-              ariaLabel="oval-loading"
+              height={100}
+              width={100}
+              color="white"
+              ariaLabel="rings-loading"
               wrapperStyle={{}}
               wrapperClass=""
             />
@@ -139,12 +139,12 @@ const Contacts = () => {
         <div className='bg-slate-50'>
           {submitting && (
             <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
-              <Oval
+              <Rings
                 visible={true}
-                height={60}
-                width={60}
-                color="#ffffff"
-                ariaLabel="oval-loading"
+                height={100}
+                width={100}
+                color="white"
+                ariaLabel="rings-loading"
                 wrapperStyle={{}}
                 wrapperClass=""
               />
@@ -158,7 +158,7 @@ const Contacts = () => {
             />
           </div>
   
-          <div className='max-w-80 bg-white mt-6 px-2 pb-6  md:px-6 rounded-lg shadow-md text-start mb-8 md:max-w-2xl mx-auto hover:text-black'>
+          <div className='max-w-80  bg-white mt-6 px-2 pb-6  md:px-6 rounded-lg shadow-md text-start mb-8 md:max-w-2xl mx-auto hover:text-black'>
             <img className='md:w-auto md:mx-auto mb-4' src={image20} alt='' />
             <h2 className='text-5xl mt-3 roboto-thin mb-6'>Contact <span className='font-bold text-5xl roboto-thin text-black'>Us</span></h2>
             <form className='space-y-4' onSubmit={handleSubmit}>
@@ -235,12 +235,12 @@ const Contacts = () => {
               <div className="button-hover-effect font-bold mt-6 w-40 bg-slate-700 hover:text-white hover:bg-slate-800 px-4 py-4 mb-4 rounded-sm">
                 <button type='submit' disabled={submitting}>
                   {submitting ? (
-                    <Oval
+                    <Rings
                       visible={true}
                       height={20}
                       width={20}
-                      color="#ffffff"
-                      ariaLabel="oval-loading"
+                      color="white"
+                      ariaLabel="rings-loading"
                       wrapperStyle={{}}
                       wrapperClass=""
                     />

@@ -8,7 +8,7 @@ import image16 from "./images/image16.png";
 import image17 from "./images/image17.png"; 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Oval } from 'react-loader-spinner'; // Import the Oval spinner component
+import { Rings } from 'react-loader-spinner'; // Import the Oval spinner component
 
 const Reviews = () => {
   const [loading, setLoading] = useState(true); // State to track loading
@@ -16,7 +16,7 @@ const Reviews = () => {
     // Simulate a timeout for loading
     const timeout = setTimeout(() => {
       setLoading(false); // Set loading to false after timeout
-    }, 2000); // 2000 milliseconds = 2 seconds
+    }, 4000); // 2000 milliseconds = 2 seconds
 
     // Clean up the timeout to avoid memory leaks
     return () => clearTimeout(timeout);
@@ -37,15 +37,15 @@ const Reviews = () => {
     <div className="relative h-screen w-screen md:mt-6">
     <div className="slider-container pt-40 pb-36 ">
       {loading && (
-        <div className="absolute inset-0 flex justify-center items-center bg-white" style={{ height: '100vh' }}>
+        <div className="absolute inset-0 flex justify-center items-center bg-black" style={{ height: '100vh' }}>
           {/* Display a red background and the Oval spinner */}
           <div className="spinner-container">
-            <Oval
+            <Rings
               visible={true}
-              height={60}
-              width={60}
-              color="black"
-              ariaLabel="oval-loading"
+              height={100}
+              width={100}
+              color="white"
+              ariaLabel="rings-loading"
               wrapperStyle={{}}
               wrapperClass=""
             />

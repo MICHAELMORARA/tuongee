@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import osoro from './images/osoro.png';
 import '../App.css'; 
-import { Oval } from 'react-loader-spinner'; // Import the Oval spinner component
+import { Rings } from 'react-loader-spinner'; // Import the Oval spinner component
 
 const Home = () => {
   const [loading, setLoading] = useState(true); // State to track loading
@@ -12,24 +12,25 @@ const Home = () => {
     // Simulate a timeout for loading
     const timeout = setTimeout(() => {
       setLoading(false); // Set loading to false after timeout
-    }, 2000); // 2000 milliseconds = 2 seconds
+    }, 4000); // 2000 milliseconds = 2 seconds
 
     // Clean up the timeout to avoid memory leaks
     return () => clearTimeout(timeout);
   }, []); // Run only once after component mounting
 
   return (
+    <div className='bg-black'>
     <div className="relative h-screen md:h-screen w-screen md:mt-6">
       {loading && (
         <div className="absolute inset-0 flex justify-center items-center spinner-animation">
           {/* Display a red background and the Oval spinner */}
           <div className="spinner-container">
-            <Oval
+            <Rings
               visible={true}
-              height={60}
-              width={60}
-              color="black"
-              ariaLabel="oval-loading"
+              height={100}
+              width={100}
+              color="white"
+              ariaLabel="rings-loading"
               wrapperStyle={{}}
               wrapperClass=""
             />
@@ -58,7 +59,10 @@ const Home = () => {
             </div>
           </div>
         </div>
+         
+
       )}
+    </div>
     </div>
   );
 }

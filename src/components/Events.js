@@ -7,7 +7,7 @@ import image9 from "./images/image9.png";
 import image10 from "./images/image10.png";
 import image11 from "./images/image11.png";
 import image12 from "./images/image12.png";
-import { Oval } from 'react-loader-spinner'; // Import the Oval spinner component
+import { Rings } from 'react-loader-spinner'; // Import the Oval spinner component
 
 const Events = () => {
   const [loading, setLoading] = useState(true); // State to track loading
@@ -16,7 +16,7 @@ const Events = () => {
     // Simulate a timeout for loading
     const timeout = setTimeout(() => {
       setLoading(false); // Set loading to false after timeout
-    }, 2000); // 2000 milliseconds = 2 seconds
+    }, 4000); // 2000 milliseconds = 2 seconds
 
     // Clean up the timeout to avoid memory leaks
     return () => clearTimeout(timeout);
@@ -25,15 +25,15 @@ const Events = () => {
   return (
     <div>
       {loading && (
-        <div className="fixed inset-0 flex justify-center items-center bg-white z-50">
+        <div className="fixed inset-0 flex justify-center items-center bg-black z-50">
           {/* Display a red background and the Oval spinner */}
           <div className="spinner-container">
-            <Oval
+            <Rings
               visible={true}
-              height={60}
-              width={60}
-              color="black"
-              ariaLabel="oval-loading"
+              height={100}
+              width={100}
+              color="white"
+              ariaLabel="rings-loading"
               wrapperStyle={{}}
               wrapperClass=""
             />
