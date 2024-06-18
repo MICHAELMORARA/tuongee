@@ -62,7 +62,7 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <div className="relative h-screen md:h-screen w-screen md:mt-6">
+    <div>
       {loading && (
         <div className="fixed inset-0 flex justify-center items-center bg-black z-50">
           <div className="spinner-container">
@@ -213,7 +213,7 @@ const AboutUs = () => {
           </div>
         </div>
       )}
-    </div>
+   </div>
   );
 }
 
