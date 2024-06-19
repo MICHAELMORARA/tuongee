@@ -23,8 +23,8 @@ const transporter = nodemailer.createTransport({
   port: 465,
   secure: true, // true for 465, false for other ports
   auth: {
-    user: 'michaelmorara12@gmail.com', // Hardcoded email for testing
-    pass: 'sehbjmvdcnmbernv',           // Hardcoded password for testing
+    user: 'michaelmorara123@gmail.com',
+    pass:"O0987654321o" ,
   },
   tls: {
     rejectUnauthorized: false
@@ -35,19 +35,31 @@ const transporter = nodemailer.createTransport({
 app.post('/send', upload.single('file'), (req, res) => {
   console.log('Request received:', req.body);
   console.log('File received:', req.file); // Log file details
-  const { fullName, email, phoneNumber, subject, message } = req.body;
+
+  const {
+    fullName, email, phoneNumber, subject, message,
+    primarySchool, birthCertificateNumber, parentsId, ward,
+    location, subLocation
+  } = req.body;
+
   const file = req.file;
 
   const mailOptions = {
     from: `${fullName} <${email}>`, // Sender address
-    to: 'michaelmorara12@gmail.com',   // Receiver address
-    subject: subject,
+    to: 'michaelmorara123@gmail.com',   // Receiver address
+    subject: subject || 'Contact Form Submission',
     text: `
       Name: ${fullName}
       Email: ${email}
       Phone Number: ${phoneNumber}
       Subject: ${subject}
       Message: ${message}
+      Primary School: ${primarySchool}
+      Birth Certificate Number: ${birthCertificateNumber}
+      Parents ID: ${parentsId}
+      Ward: ${ward}
+      Location: ${location}
+      Sub-location: ${subLocation}
     `,
     attachments: file ? [
       {

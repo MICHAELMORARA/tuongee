@@ -16,6 +16,12 @@ const Contacts = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
+  const [primarySchool, setPrimarySchool] = useState('');
+  const [birthCertificateNumber, setBirthCertificateNumber] = useState('');
+  const [parentsId, setParentsId] = useState('');
+  const [ward, setWard] = useState('');
+  const [location, setLocation] = useState('');
+  const [subLocation, setSubLocation] = useState('');
   const [file, setFile] = useState(null);
   const [fullNameError, setFullNameError] = useState('');
   const [emailError, setEmailError] = useState('');
@@ -82,6 +88,12 @@ const Contacts = () => {
     formData.append('phoneNumber', phoneNumber);
     formData.append('subject', subject);
     formData.append('message', message);
+    formData.append('primarySchool', primarySchool);
+    formData.append('birthCertificateNumber', birthCertificateNumber);
+    formData.append('parentsId', parentsId);
+    formData.append('ward', ward);
+    formData.append('location', location);
+    formData.append('subLocation', subLocation);
     if (file) {
       formData.append('file', file);
     }
@@ -106,6 +118,12 @@ const Contacts = () => {
           setPhoneNumber('');
           setSubject('');
           setMessage('');
+          setPrimarySchool('');
+          setBirthCertificateNumber('');
+          setParentsId('');
+          setWard('');
+          setLocation('');
+          setSubLocation('');
           setFile(null);
         }, 2000); // Delay of 2 seconds before showing the result
       })
@@ -162,10 +180,10 @@ const Contacts = () => {
             <img className='md:w-auto md:mx-auto mb-4' src={image20} alt='' />
             <h2 className='text-5xl mt-3 roboto-thin mb-6'>Contact <span className='font-bold text-5xl roboto-thin text-black'>Us</span></h2>
             <form className='space-y-4' onSubmit={handleSubmit}>
-              <div className='flex items-center'>
-                <label className='w-20  text-gray-500 font-semibold roboto-thin' htmlFor='full-name'>Full Name</label>
+              <div className='flex flex-col space-y-2'>
+                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='full-name'>Full Name</label>
                 <input
-                  className='flex-1 border text-black rounded p-2'
+                  className='text-black border rounded p-2'
                   type='text'
                   id='full-name'
                   name='full-name'
@@ -173,12 +191,12 @@ const Contacts = () => {
                   onChange={handleFullNameChange}
                   required
                 />
+                {fullNameError && <p className="text-red-500">{fullNameError}</p>}
               </div>
-              {fullNameError && <p className="text-red-500">{fullNameError}</p>}
-              <div className='flex items-center'>
-                <label className='w-20  text-gray-500 font-semibold  roboto-thin' htmlFor='email'>Email</label>
+              <div className='flex flex-col space-y-2'>
+                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='email'>Email</label>
                 <input
-                  className='flex-1 text-black border rounded p-2'
+                  className='text-black border rounded p-2'
                   type='email'
                   id='email'
                   name='email'
@@ -186,45 +204,88 @@ const Contacts = () => {
                   onChange={handleEmailChange}
                   required
                 />
+                {emailError && <p className="text-red-500">{emailError}</p>}
               </div>
-              {emailError && <p className="text-red-500">{emailError}</p>}
-              <div className='flex items-center'>
-                <label className='w-16 text-gray-500 font-semibold  roboto-thin' htmlFor='phone-number'>Phone Number</label>
+              <div className='flex flex-col space-y-2'>
+                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='phone-number'>Phone Number</label>
                 <PhoneInput
                   country={'us'} // Default country
                   value={phoneNumber}
                   onChange={handlePhoneNumberChange}
-                  inputClass='text-black border                   rounded  '
-                  containerClass='flex max-w-4 md:ml-4'
+                  inputClass='text-black border rounded'
+                  containerClass='flex max-w-4'
                   required
                 />
+                {phoneNumberError && <p className="text-red-500">{phoneNumberError}</p>}
               </div>
-              {phoneNumberError && <p className="text-red-500">{phoneNumberError}</p>}
-              <div className='flex items-center'>
-                <label className='w-20  text-gray-500 font-semibold  roboto-thin ' htmlFor='subject'>Subject</label>
+              <div className='flex flex-col space-y-2'>
+                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='primary-school'>Primary School</label>
                 <input
-                  className='flex-1 text-black border rounded p-2'
+                  className='text-black border rounded p-2'
                   type='text'
-                  id='subject'
-                  name='subject'
-                  value={subject}
-                  onChange={(e) => setSubject(e.target.value)}
+                  id='primary-school'
+                  name='primary-school'
+                  value={primarySchool}
+                  onChange={(e) => setPrimarySchool(e.target.value)}
                   required/>
               </div>
-              <div className='flex items-center'>
-                <label className='w-20  text-gray-500 font-semibold roboto-thin' htmlFor='message'>Enter Your Message</label>
-                <textarea
-                  className='flex-1 text-black border rounded p-2'
-                  id='message'
-                  name='message'
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  rows='4'
-                  required
-                ></textarea>
+              <div className='flex flex-col space-y-2'>
+                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='birth-certificate-number'>Birth Certificate Number</label>
+                <input
+                  className='text-black border rounded p-2'
+                  type='text'
+                  id='birth-certificate-number'
+                  name='birth-certificate-number'
+                  value={birthCertificateNumber}
+                  onChange={(e) => setBirthCertificateNumber(e.target.value)}
+                  required/>
               </div>
-              <div className='flex items-center'>
-                <label className='w-28 text-gray-500 font-semibold roboto-thin ' htmlFor='attachment'>Attach File</label>
+              <div className='flex flex-col space-y-2'>
+                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='parents-id'>Parents ID</label>
+                <input
+                  className='text-black border rounded p-2'
+                  type='text'
+                  id='parents-id'
+                  name='parents-id'
+                  value={parentsId}
+                  onChange={(e) => setParentsId(e.target.value)}
+                  required/>
+              </div>
+              <div className='flex flex-col space-y-2'>
+                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='ward'>Ward</label>
+                <input
+                  className='text-black border rounded p-2'
+                  type='text'
+                  id='ward'
+                  name='ward'
+                  value={ward}
+                  onChange={(e) => setWard(e.target.value)}
+                  required/>
+              </div>
+              <div className='flex flex-col space-y-2'>
+                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='location'>Location</label>
+                <input
+                  className='text-black border rounded p-2'
+                  type='text'
+                  id='location'
+                  name='location'
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
+                  required/>
+              </div>
+              <div className='flex flex-col space-y-2'>
+                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='sub-location'>Sub-location</label>
+                <input
+                  className='text-black border rounded p-2'
+                  type='text'
+                  id='sub-location'
+                  name='sub-location'
+                  value={subLocation}
+                  onChange={(e) => setSubLocation(e.target.value)}
+                  required/>
+              </div>
+              <div className='flex flex-col space-y-2'>
+                <label className='text-gray-500 font-semibold roboto-thin ' htmlFor='attachment'>Attach File</label>
                 <input
                   type="file"
                   id="attachment"
@@ -260,4 +321,3 @@ const Contacts = () => {
 }
 
 export default Contacts;
-
