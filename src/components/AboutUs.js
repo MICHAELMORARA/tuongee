@@ -100,7 +100,7 @@ const AboutUs = () => {
               className="absolute inset-0 object-cover md:pb-4 md:object-fill h-full w-full z-0 responsive-image" 
             />
             <h2 
-              className="absolute text-5xl text-white p-3 rounded-sm z-10 rise-up"
+              className="absolute text-5xl text-white roboto-thin p-3 rounded-sm z-10 rise-up"
               style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)', fontSize: '3rem' }}
             >
               About Us
