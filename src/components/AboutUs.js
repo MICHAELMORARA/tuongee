@@ -126,10 +126,10 @@ const AboutUs = () => {
               />
               <div className='absolute inset-0 flex justify-center items-center'>
                 <div className='relative w-64 h-64'>
-                <a href='https://whatsapp.com' target='_blank' rel="noopener noreferrer">
+                <a href='https://facebook.com' target='_blank' rel="noopener noreferrer">
                      <FontAwesomeIcon icon={faFacebook} className='absolute bg-slate-700 hover:bg-red-700 rounded-full p-2 text-white text-3xl top-48 left-9 transform -translate-x-1/2' />
                  </a> 
-                 <a href='https://whatsapp.com' target='_blank' rel="noopener noreferrer"> 
+                 <a href='https://instagram.com' target='_blank' rel="noopener noreferrer"> 
                      <FontAwesomeIcon icon={faInstagram} className='absolute bg-slate-700 hover:bg-red-700 rounded-full p-2 text-white text-3xl right-5 top-52  transform -translate-y-1/2' />
                  </a>
                  <button onClick={openModal}>
