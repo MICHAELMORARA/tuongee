@@ -55,7 +55,7 @@ const Reviews = () => {
       {!loading && (
         <Slider {...settings}>
           <div className=' roboto-thin md:p-6 p-6 md:-mt-7 '>
-            <h2 className='text-black text-3xl  font-bold text-center'>What Beneficiaries Say</h2>
+            <h2 className='text-black text-3xl md:w-0 w-96  font-bold text-center'>What Beneficiaries Say</h2>
             <p className='italic mt-3'>With Osoro Care Club, I feel reassured and supported every step of the way. Their dedication to providing top-notch care is unmatched. I highly appreciate their commitment to our well-being.</p>
             <img className='rounded-full w-44 h-44 mx-auto mt-7 md:mt-4' src={image13} alt=''/>
             <h3 className='text-black font-semibold italic mt-8 md:mt-4'>Mrs. Zipporah & Daughter</h3>
