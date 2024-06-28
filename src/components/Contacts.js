@@ -26,6 +26,7 @@ const Contacts = () => {
   const [fullNameError, setFullNameError] = useState('');
   const [emailError, setEmailError] = useState('');
   const [phoneNumberError, setPhoneNumberError] = useState('');
+  const [popup, setPopup] = useState({ show: false, success: false });
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -104,36 +105,44 @@ const Contacts = () => {
     })
       .then(response => response.json())
       .then(data => {
-        setTimeout(() => {
-          setSubmitting(false); // Set the submitting state to false
-          console.log('Response from server:', data); // Log server response
-          if (data.message) {
-            window.alert('Submitted Successfully');
-          } else {
-            window.alert('Submission Failed. Please try again.');
-          }
-          // Reset form fields
-          setFullName('');
-          setEmail('');
-          setPhoneNumber('');
-          setSubject('');
-          setMessage('');
-          setPrimarySchool('');
-          setBirthCertificateNumber('');
-          setParentsId('');
-          setWard('');
-          setLocation('');
-          setSubLocation('');
-          setFile(null);
-        }, 2000); // Delay of 2 seconds before showing the result
+        setSubmitting(false); // Set the submitting state to false
+        console.log('Response from server:', data); // Log server response
+        if (data.message) {
+          openPopup(true);
+        } else {
+          openPopup(false);
+        }
+        // Reset form fields
+        resetForm();
       })
       .catch(error => {
-        setTimeout(() => {
-          setSubmitting(false); // Set the submitting state to false
-          console.error('Error:', error); // Log error
-          window.alert('Submission failed. Please try again.');
-        }, 2000); // Delay of 2 seconds before showing the result
+        setSubmitting(false); // Set the submitting state to false
+        console.error('Error:', error); // Log error
+        openPopup(false);
       });
+  };
+
+  const openPopup = (success) => {
+    setPopup({ show: true, success });
+  };
+
+  const closePopup = () => {
+    setPopup({ show: false, success: false });
+  };
+
+  const resetForm = () => {
+    setFullName('');
+    setEmail('');
+    setPhoneNumber('');
+    setSubject('');
+    setMessage('');
+    setPrimarySchool('');
+    setBirthCertificateNumber('');
+    setParentsId('');
+    setWard('');
+    setLocation('');
+    setSubLocation('');
+    setFile(null);
   };
 
   return (
@@ -313,6 +322,24 @@ const Contacts = () => {
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      )}
+      {popup.show && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
+          <div className="bg-white p-8 rounded-md shadow-md text-center">
+            {popup.success ? (
+              <div>
+                <h2 className="text-green-600 text-2xl font-bold mb-4">Success!</h2>
+                <p className="text-gray-800">Your message has been submitted successfully.</p>
+              </div>
+            ) : (
+              <div>
+                <h2 className="text-red-600 text-2xl font-bold mb-4">Submission Failed</h2>
+                <p className="text-gray-800">There was an error submitting your message. Please try again later.</p>
+              </div>
+            )}
+            <button onClick={closePopup} className="mt-6 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-md">Close</button>
           </div>
         </div>
       )}
