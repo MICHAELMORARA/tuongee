@@ -41,7 +41,7 @@ const Home = () => {
       {!loading && (
         <div className='roboto-thin'>
           <img src={osoro} alt='' className="absolute inset-0 object-cover md:object-top h-full w-full" />
-          <div className="absolute inset-0 flex flex-col mt-10 justify-center text-white p-4 md:p-8">
+          <div className="absolute inset-0 flex flex-col mt-16 justify-center text-white p-4 md:p-8">
             <h1 className="text-2xl md:text-xl font-bold mb-4 text-start fade-in-down">Building dreams</h1>
             <h1 className="text-2xl md:text-2xl font-bold mb-4 text-start fade-in-down">Empowering dreams</h1>
             <h1 className="text-2xl md:text-2xl font-bold mb-4 text-start fade-in-down">With Hon Osoro Care Club Through NGCDF South Mugirango Constituency</h1>

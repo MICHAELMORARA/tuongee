@@ -55,11 +55,11 @@ const Footer = () => {
               Our Connective
             </h2>
             <ul className=' ml-10'>
-              <li className='hover:text-amber-300'><Link to="/home">Home</Link></li>
-              <li className='hover:text-amber-300'><Link to="/aboutus">About Us</Link></li>
-              <li className='hover:text-amber-300'><Link to="/events">Events</Link></li>
-              <li className='hover:text-amber-300'><Link to="/reviews">Reviews</Link></li>
-              <li className='hover:text-amber-300'><Link to="/contacts">Contacts</Link></li>
+              <li className='hover:text-gray-400'><Link to="/home">Home</Link></li>
+              <li className='hover:text-gray-400'><Link to="/aboutus">About Us</Link></li>
+              <li className='hover:text-gray-400'><Link to="/events">Events</Link></li>
+              <li className='hover:text-gray-400'><Link to="/reviews">Reviews</Link></li>
+              <li className='hover:text-gray-400'><Link to="/contacts">Get In Touch</Link></li>
             </ul>
           </div>
           <div className='text-white mt-3 text-start relative z-10'>
@@ -68,14 +68,14 @@ const Footer = () => {
               Get In Touch
             </h2>
             <ul className='ml-4 block'>
-              <li className='flex mt-2'><FontAwesomeIcon  icon={faMapMarker} className='mr-2  p-2 bg-black hover:bg-red-700 rounded-sm'/> South Mugirango</li>
+              <li className='flex mt-2'><FontAwesomeIcon  icon={faMapMarker} className='mr-3  p-2 pl-2  pr-2 bg-black hover:bg-red-700 rounded-lg'/> South Mugirango</li>
               <li className='ml-11'>Gucha South & Etago Sub County</li>
               <li className='ml-11'>Kisii County</li>
               <li className='ml-11'>Kenya</li>
             </ul>
             <div className='block items-center'>
-                <span className='ml-4 mr-2 flex mt-2 '><FontAwesomeIcon icon={faPhone} className='mr-1  bg-black p-2 hover:bg-red-700' /> +254724662381</span>
-                <h3 className='ml-4 mr-2 flex mt-4 '><FontAwesomeIcon icon={faEnvelope} className='mr-1 bg-black p-2 hover:bg-red-700' /> Osorocareclub@gmail.com</h3>
+                <span className='ml-4 mr-2 flex mt-2 '><FontAwesomeIcon icon={faPhone} className='mr-1  bg-black p-2 hover:bg-red-700 rounded-lg' /> +254724662381</span>
+                <h3 className='ml-4 mr-2 flex mt-4 '><FontAwesomeIcon icon={faEnvelope} className='mr-1 bg-black p-2 hover:bg-red-700 rounded-lg' /> Osorocareclub@gmail.com</h3>
             </div>
           </div>
         </div>
