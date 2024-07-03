@@ -18,7 +18,7 @@
 }
 /* Specify Roboto as the default font family */
 .roboto-thin {
-  font-family: "Roboto",Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: "--thm-font", sans-serif;
   font-style: normal;
 }
 
