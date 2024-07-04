@@ -5,12 +5,12 @@ import image20 from "./images/image20.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { Rings } from 'react-loader-spinner';
-import PhoneInput from 'react-phone-input-2'; // Import the react-phone-input-2 component
-import 'react-phone-input-2/lib/style.css'; // Import the styles for the react-phone-input-2 component
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 
 const Contacts = () => {
   const [loading, setLoading] = useState(true);
-  const [submitting, setSubmitting] = useState(false); // State for form submission spinner
+  const [submitting, setSubmitting] = useState(false);
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -27,6 +27,21 @@ const Contacts = () => {
   const [emailError, setEmailError] = useState('');
   const [phoneNumberError, setPhoneNumberError] = useState('');
   const [popup, setPopup] = useState({ show: false, success: false });
+
+  const wardOptions = [
+    'Tabaka',
+    'Bogetenga',
+    "Boikang'a",
+    "Moticho",
+    "Getenga",
+    "Borabu-Chitago",
+    
+  
+  
+  
+     ];
+  const locationOptions = ['Location 1', 'Location 2', 'Location 3'];
+  const subLocationOptions = ['Sub-location 1', 'Sub-location 2', 'Sub-location 3'];
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -81,7 +96,7 @@ const Contacts = () => {
       return;
     }
 
-    setSubmitting(true); // Set the submitting state to true
+    setSubmitting(true);
 
     const formData = new FormData();
     formData.append('fullName', fullName);
@@ -105,19 +120,18 @@ const Contacts = () => {
     })
       .then(response => response.json())
       .then(data => {
-        setSubmitting(false); // Set the submitting state to false
-        console.log('Response from server:', data); // Log server response
+        setSubmitting(false);
+        console.log('Response from server:', data);
         if (data.message) {
           openPopup(true);
         } else {
           openPopup(false);
         }
-        // Reset form fields
         resetForm();
       })
       .catch(error => {
-        setSubmitting(false); // Set the submitting state to false
-        console.error('Error:', error); // Log error
+        setSubmitting(false);
+        console.error('Error:', error);
         openPopup(false);
       });
   };
@@ -190,7 +204,9 @@ const Contacts = () => {
             <h2 className='text-5xl mt-3 roboto-thin mb-6'>Contact <span className='font-bold text-5xl roboto-thin text-black'>Us</span></h2>
             <form className='space-y-4' onSubmit={handleSubmit}>
               <div className='flex flex-col space-y-2'>
-                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='full-name'>Full Name</label>
+                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='full-name'>
+                  Full Name <span className="text-red-500">*</span>
+                </label>
                 <input
                   className='text-black border rounded p-2'
                   type='text'
@@ -216,9 +232,11 @@ const Contacts = () => {
                 {emailError && <p className="text-red-500">{emailError}</p>}
               </div>
               <div className='flex flex-col space-y-2'>
-                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='phone-number'>Phone Number</label>
+                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='phone-number'>
+                  Phone Number <span className="text-red-500">*</span>
+                </label>
                 <PhoneInput
-                  country={'us'} // Default country
+                  country={'us'}
                   value={phoneNumber}
                   onChange={handlePhoneNumberChange}
                   inputClass='text-black border rounded'
@@ -228,7 +246,9 @@ const Contacts = () => {
                 {phoneNumberError && <p className="text-red-500">{phoneNumberError}</p>}
               </div>
               <div className='flex flex-col space-y-2'>
-                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='primary-school'>Primary School</label>
+                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='primary-school'>
+                  Primary School <span className="text-red-500">*</span>
+                </label>
                 <input
                   className='text-black border rounded p-2'
                   type='text'
@@ -236,10 +256,13 @@ const Contacts = () => {
                   name='primary-school'
                   value={primarySchool}
                   onChange={(e) => setPrimarySchool(e.target.value)}
-                  required/>
+                  required
+                />
               </div>
               <div className='flex flex-col space-y-2'>
-                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='birth-certificate-number'>Birth Certificate Number</label>
+                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='birth-certificate-number'>
+                  Birth Certificate Number <span className="text-red-500">*</span>
+                </label>
                 <input
                   className='text-black border rounded p-2'
                   type='text'
@@ -247,10 +270,13 @@ const Contacts = () => {
                   name='birth-certificate-number'
                   value={birthCertificateNumber}
                   onChange={(e) => setBirthCertificateNumber(e.target.value)}
-                  required/>
+                  required
+                />
               </div>
               <div className='flex flex-col space-y-2'>
-                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='parents-id'>Parents ID</label>
+                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='parents-id'>
+                  Parents ID <span className="text-red-500">*</span>
+                </label>
                 <input
                   className='text-black border rounded p-2'
                   type='text'
@@ -258,49 +284,80 @@ const Contacts = () => {
                   name='parents-id'
                   value={parentsId}
                   onChange={(e) => setParentsId(e.target.value)}
-                  required/>
+                  required
+                />
               </div>
               <div className='flex flex-col space-y-2'>
-                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='ward'>Ward</label>
-                <input
+                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='ward'>
+                  Ward <span className="text-red-500">*</span>
+                </label>
+                <select
                   className='text-black border rounded p-2'
-                  type='text'
                   id='ward'
                   name='ward'
                   value={ward}
                   onChange={(e) => setWard(e.target.value)}
-                  required/>
+                  required
+                >
+                  <option value="">Select Ward</option>
+                  {wardOptions.map((option, index) => (
+                    <option key={index} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
               </div>
               <div className='flex flex-col space-y-2'>
-                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='location'>Location</label>
-                <input
+                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='location'>
+                  Location <span className="text-red-500">*</span>
+                </label>
+                <select
                   className='text-black border rounded p-2'
-                  type='text'
                   id='location'
                   name='location'
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
-                  required/>
+                  required
+                >
+                  <option value="">Select Location</option>
+                  {locationOptions.map((option, index) => (
+                    <option key={index} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
               </div>
               <div className='flex flex-col space-y-2'>
-                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='sub-location'>Sub-location</label>
-                <input
+                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='sub-location'>
+                  Sub-location <span className="text-red-500">*</span>
+                </label>
+                <select
                   className='text-black border rounded p-2'
-                  type='text'
                   id='sub-location'
                   name='sub-location'
                   value={subLocation}
                   onChange={(e) => setSubLocation(e.target.value)}
-                  required/>
+                  required
+                >
+                  <option value="">Select Sub-location</option>
+                  {subLocationOptions.map((option, index) => (
+                    <option key={index} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
               </div>
               <div className='flex flex-col space-y-2'>
-                <label className='text-gray-500 font-semibold roboto-thin ' htmlFor='attachment'>Attach File</label>
+                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='attachment'>
+                  Attach File
+                </label>
                 <input
                   type="file"
                   id="attachment"
                   name="attachment"
                   onChange={handleFileChange}
-                  accept=".pdf,.doc,.docx,.ppt,.pptx,.png,.svg,.xls,.xlsx"/>
+                  accept=".pdf,.doc,.docx,.ppt,.pptx,.png,.svg,.xls,.xlsx"
+                />
               </div>
               <div className="button-hover-effect font-bold mt-6 w-40 bg-slate-700 hover:text-white hover:bg-slate-800 px-4 py-4 mb-4 rounded-sm">
                 <button type='submit' disabled={submitting}>
