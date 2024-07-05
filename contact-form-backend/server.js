@@ -38,7 +38,7 @@ app.post('/send', upload.single('file'), (req, res) => {
 
   const {
     fullName, email, phoneNumber, subject,
-    primarySchool,secondaryschooladmitted, admissionnumber, birthCertificateNumber, parentsId, ward,
+    primarySchool,secondarySchool, admissionNumber, birthCertificateNumber, parentsId, ward,
     location, subLocation
   } = req.body;
 
@@ -54,8 +54,8 @@ app.post('/send', upload.single('file'), (req, res) => {
       Phone Number: ${phoneNumber}
       Primary School: ${primarySchool}
       Birth Certificate Number: ${birthCertificateNumber}
-      Secondary School Admitted: ${secondaryschooladmitted}
-      Admission Number: ${admissionnumber}
+      Secondary School Admitted: ${secondarySchool}
+      Admission Number: ${admissionNumber}
       Parents ID: ${parentsId}
       Ward: ${ward}
       Location: ${location}
