@@ -75,7 +75,7 @@ const Footer = () => {
             </ul>
             <div className='block items-center'>
                 <span className='ml-4 mr-2 flex mt-2 '><FontAwesomeIcon icon={faPhone} className='mr-1  bg-black p-2 hover:bg-red-700 rounded-lg' /> +254727410016</span>
-                <h3 className='ml-4 mr-2 flex mt-4 '><FontAwesomeIcon icon={faEnvelope} className='mr-1 bg-black p-2 hover:bg-red-700 rounded-lg' /> Osorocareclubngcdf@gmail.com</h3>
+                <h3 className='ml-4 mr-2 flex text-sm italic mt-4 '><FontAwesomeIcon icon={faEnvelope} className='mr-1 bg-black p-2  hover:bg-red-700 rounded-lg' /> Cdfsouthmugirangoscholarship@gmail.com</h3>
             </div>
           </div>
         </div>
