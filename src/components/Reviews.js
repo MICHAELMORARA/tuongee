@@ -56,25 +56,25 @@ const Reviews = () => {
         <Slider {...settings}>
           <div className=' roboto-thin md:p-2 p-6 md:-mt-3 '>
             <h2 className='text-black text-3xl  font-bold text-center'>What Beneficiaries Say</h2>
-            <p className='italic md:-ml-3 mt-3'>With Osoro Care Club, I feel reassured and supported every step of the way. Their dedication to providing top-notch care is unmatched. I highly appreciate their commitment to our well-being.</p>
+            <p className='italic md:-ml-3 mt-3'>With Osoro Care Club through NG-CDF South Mugirango, I feel reassured and supported every step of the way. Their dedication to providing top-notch care is unmatched. I highly appreciate their commitment to our well-being.</p>
             <img className='rounded-full w-44 h-44 mx-auto mt-7 md:mt-4' src={image13} alt=''/>
             <h3 className='text-black font-semibold italic mt-8 md:mt-4'>Mrs. Zipporah & Daughter</h3>
           </div>
           <div className=' roboto-thin md:p-2 p-6 md:-mt-7'>
             <h2 className='text-black text-2xl md:mt-6 font-bold text-center'>What Beneficiaries Say</h2>
-            <p className='italic mt-3'>Thanks to our able Hon. Silvanus Osoro, we feel more secure and well-cared for every day for inventing Osoro-Care-Club.</p>
+            <p className='italic mt-3'>Thanks to our able Hon. Silvanus Osoro, we feel more secure and well-cared for every day for inventing Osoro-Care-Club through NG-CDF South Mugirango Constituency to assist vulnerable students with full scholarship from form one to form four.</p>
             <img className='rounded-full w-44 h-44 mx-auto mt-7 md:mt-4' src={image14} alt=''/>
-            <h3 className='text-black font-semibold italic mt-8 md:mt-4'>Mr. Brian </h3>
+            <h3 className='text-black font-semibold italic mt-8 md:mt-4'>Mr. Onyango (Fund Account Manager) </h3>
           </div>
           <div className=' roboto-thin md:p-2 p-6 md:-mt-7'>
             <h2 className='text-black text-2xl md:mt-6 font-bold text-center'>What Beneficiaries Say</h2>
-            <p className='italic mt-3'>Osoro Care Club has profoundly impacted our family's well-being, offering unparalleled support and care. Their dedication and professionalism are truly exceptional. We couldn't be happy without their service.</p>
+            <p className='italic mt-3'>Osoro Care Club through NG-CDF South Mugirango Constituency has profoundly impacted our family's well-being, offering unparalleled support and care. Their dedication and professionalism are truly exceptional. We couldn't be happy without their service.</p>
             <img className='rounded-full w-44 h-44 mx-auto mt-7 md:mt-4' src={image15} alt=''/>
             <h3 className='text-black font-semibold mt-8 md:mt-4'>Top Achievers</h3>
           </div>
           <div className=' roboto-thin md:p-6 p-6 md:-mt-7'>
             <h2 className='text-black text-2xl font-bold text-center'>What Beneficiaries Say</h2>
-            <p className='italic mt-3'>The level of care and support we receive from Osoro Care Club is extraordinary. Their professional and compassionate approach has truly enhanced our lives. We couldn't ask for better service.</p>
+            <p className='italic mt-3'>The level of care and support we receive from Osoro Care Club through NG-CDF South Mugirango Constituency is extraordinary. Their professional and compassionate approach has truly enhanced our lives. We couldn't ask for better service.</p>
             <img className='rounded-full w-44 h-44 mx-auto mt-7 md:mt-4' src={image16} alt=''/>
             <h3 className='text-black font-semibold italic mt-8 md:mt-4'>OCPD Thomas</h3>
           </div>

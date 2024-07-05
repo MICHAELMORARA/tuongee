@@ -71,17 +71,17 @@ const Events = () => {
               <div className='flex-1'>
                 <div className='testimonial-card bg-white p-6 rounded-lg text-center mb-8'>
                   <img className='w-52 mx-auto mb-4' src={image10} alt=''/>
-                  <p className='text-gray-700 mb-4'>The Osoro Care Club exemplifies altruism by aiding needy students through extensive support, ensuring their academic and personal development flourishes. This compassionate initiative not only provides essential resources but also fosters a nurturing environment for holistic growth, underscoring the profound impact of community solidarity.</p>
+                  <p className='text-gray-700 mb-4'>The Osoro Care Club through NG-CDF South Mugirango Constituency exemplifies altruism by aiding needy students through extensive support, ensuring their academic and personal development flourishes. This compassionate initiative not only provides essential resources but also fosters a nurturing environment for holistic growth, underscoring the profound impact of community solidarity.</p>
                 </div>
                 <div className='testimonial-card bg-white p-6 rounded-lg  text-center'>
                   <img className='w-52 mx-auto mb-4' src={image11} alt=''/>
-                  <p className='text-gray-700 mb-4'>In addition to supplying necessities, the club actively motivates students by recognizing and rewarding their academic and extracurricular achievements. These awards serve as powerful incentives, inspiring recipients to strive for excellence and fostering a culture of perseverance and dedication among their peers.</p>
+                  <p className='text-gray-700 mb-4'>In addition to supplying necessities and motivational talks, the club actively motivates students by recognizing and motivating their academic and extracurricular achievements. These scholarship serve as powerful incentives, inspiring recipients to strive for excellence and fostering a culture of perseverance and dedication among their peers.</p>
                 </div>
               </div>
               <div className='flex-1'>
                 <div className='testimonial-card bg-white   p-5 rounded-lg  text-center'>
                   <img className='w-52 h-40 mx-auto mb-4' src={image12} alt=''/>
-                  <p className='text-gray-700 '>Through unwavering commitment and benevolence, Osoro Care Club has become a beacon of hope, transforming lives and empowering students to transcend adversity. Their efforts underscore the transformative power of support and recognition, driving sustained success and societal contribution.</p>
+                  <p className='text-gray-700 '>Through unwavering commitment and benevolence, Osoro Care Club through NG-CDF South Mugirango Constituency has become a beacon of hope, transforming lives and empowering students to transcend adversity. Their efforts underscore the transformative power of support and recognition, driving sustained success and societal contribution.</p>
                 </div>
               </div>
             </div>

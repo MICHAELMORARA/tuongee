@@ -16,8 +16,8 @@ const Navbar = () => {
     <nav className='bg-gradient-to-r from-slate-700 to bg-black p-4 roboto-thin  text-lg fixed top-0 w-full z-50'>
       <div className='container mx-auto flex justify-between items-center'>
         <div className='flex items-center md:-ml-8'>
-          <img className='w-12 h-11 rounded-full ' src={logo} alt=''/>
-          <h1 className='ml-2  text-white'>Hon Osoro-Care-Club</h1>
+          <img className='w-16 h-16 rounded-full ' src={logo} alt=''/>
+          <h1 className='ml-2 w-56 text-white'>Hon Osoro-Care-Club NGCDF South Mugirango</h1>
         </div>
         <div className='hidden md:flex space-x-4 -mr-8 bg-slate-800 rounded-full p-4'>
           <Link className='text-white hover:text-gray-400' to="/home">Home</Link>
@@ -28,7 +28,7 @@ const Navbar = () => {
           <Link className='text-white hover:text-gray-400' to="/contacts">Get in Touch</Link>
           </button>
         </div>
-        <div className='md:hidden'>
+        <div className='md:hidden md:ml-0 mr-4'>
           <button onClick={toggleMenu} className='text-white focus:outline-none'>
             <FontAwesomeIcon 
               icon={isOpen ? faTimes : faBars} 

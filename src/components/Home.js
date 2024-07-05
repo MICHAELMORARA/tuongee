@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import osoro from './images/osoro.png';
+import partner from "./images/partner.png"
 import '../App.css'; 
 import { Rings } from 'react-loader-spinner'; // Import the Oval spinner component
 
@@ -41,6 +42,14 @@ const Home = () => {
       {!loading && (
         <div className='roboto-thin'>
           <img src={osoro} alt='' className="absolute inset-0 object-cover md:object-top h-full w-full" />
+          <div className="absolute md:visible invisible flex  top-0 right-0 mt-20 mr-6 ">
+            <img src={partner} className="w-12 mr-2" alt="" />
+            <div className="text-start text-sm  italic md:mt-0 mt-16 text-green-600">
+              <h1>Motto</h1>
+              <h1>Education is the Equalizer</h1>
+            </div>
+          </div>
+          
           <div className="absolute inset-0 flex flex-col mt-16 justify-center text-white p-4 md:p-8">
             <h1 className="text-2xl md:text-xl font-bold mb-4 text-start fade-in-down">Building dreams</h1>
             <h1 className="text-2xl md:text-2xl font-bold mb-4 text-start fade-in-down">Empowering dreams</h1>

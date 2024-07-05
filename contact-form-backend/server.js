@@ -23,8 +23,8 @@ const transporter = nodemailer.createTransport({
   port: 465,
   secure: true, // true for 465, false for other ports
   auth: {
-    user: 'osorocareclub@gmail.com',
-    pass:"rngoansjeaesmodw" ,
+    user: 'osorocareclubngcdf@gmail.com',
+    pass:"dcntmyxplqpgbtzz" ,
   },
   tls: {
     rejectUnauthorized: false
@@ -37,8 +37,8 @@ app.post('/send', upload.single('file'), (req, res) => {
   console.log('File received:', req.file); // Log file details
 
   const {
-    fullName, email, phoneNumber, subject, message,
-    primarySchool, birthCertificateNumber, parentsId, ward,
+    fullName, email, phoneNumber, subject,
+    primarySchool,secondaryschooladmitted, admissionnumber, birthCertificateNumber, parentsId, ward,
     location, subLocation
   } = req.body;
 
@@ -46,16 +46,16 @@ app.post('/send', upload.single('file'), (req, res) => {
 
   const mailOptions = {
     from: `${fullName} <${email}>`, // Sender address
-    to: 'osorocareclub@gmail.com',   // Receiver address
+    to: 'cdfsouthmugirangoscholarship@gmail.com',   // Receiver address
     subject: subject || 'Contact Form Submission',
     text: `
       Name: ${fullName}
       Email: ${email}
       Phone Number: ${phoneNumber}
-      Subject: ${subject}
-      Message: ${message}
       Primary School: ${primarySchool}
       Birth Certificate Number: ${birthCertificateNumber}
+      Secondary School Admitted: ${secondaryschooladmitted}
+      Admission Number: ${admissionnumber}
       Parents ID: ${parentsId}
       Ward: ${ward}
       Location: ${location}

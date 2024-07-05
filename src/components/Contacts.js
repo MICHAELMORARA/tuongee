@@ -19,6 +19,8 @@ const Contacts = () => {
   const [primarySchool, setPrimarySchool] = useState('');
   const [birthCertificateNumber, setBirthCertificateNumber] = useState('');
   const [parentsId, setParentsId] = useState('');
+  const [secondarySchool, setSecondarySchool] = useState('');
+  const [admissionNumber, setAdmissionNumber] = useState('');
   const [ward, setWard] = useState('');
   const [location, setLocation] = useState('');
   const [subLocation, setSubLocation] = useState('');
@@ -28,20 +30,57 @@ const Contacts = () => {
   const [phoneNumberError, setPhoneNumberError] = useState('');
   const [popup, setPopup] = useState({ show: false, success: false });
 
-  const wardOptions = [
-    'Tabaka',
-    'Bogetenga',
-    "Boikang'a",
-    "Moticho",
-    "Getenga",
-    "Borabu-Chitago",
-    
-  
-  
-  
-     ];
-  const locationOptions = ['Location 1', 'Location 2', 'Location 3'];
-  const subLocationOptions = ['Sub-location 1', 'Sub-location 2', 'Sub-location 3'];
+  const wardOptions = [ 
+    'TABAKA',
+    'BOGETENGA',
+    "BOIKANG'A",
+    "MOTICHO",
+    "GETENGA",
+    "BORABU-CHITAGO",];
+  const locationOptions = [ 
+    'CHITAGO',
+    'KABIERO',
+    'S.M.BORABU',
+    'GETENGA',
+    'OTENDO',
+    'NYANSAKIA',
+    'GETONO',
+    'S.M. CENTRAL',
+    'NYAKEMBENE',
+    'MARONGO',
+    'S.M CHACHE',
+    'BOSINANGE',
+    'BOMONYARA'];
+  const subLocationOptions = [ 
+    "AMAKARA",
+    "BOIGE",
+    "KIAGWARE",
+    "BOTABORI",
+    "MONIANKU",
+    "NYAMONDO",
+    "NYARAMBA",
+    "MUMA",
+    "BOSAGA",
+    "NYABERA",
+    "NDONYO",
+    "EBURI",
+    "NYATARO",
+    "NYANSORE",
+    "BOGETENGA",
+    "NDURU",
+    "BOMONYAMA",
+    "BOIKANG'A",
+    "EMESA",
+    "IKORO",
+    "NYAKORERE",
+    "BOKIMAI",
+    "BOMWARE/BOTA",
+    "BONYAGWANGA",
+    "BOMBURE",
+    "IRINGA",
+    "NYATIKE"
+   
+  ];
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -107,6 +146,8 @@ const Contacts = () => {
     formData.append('primarySchool', primarySchool);
     formData.append('birthCertificateNumber', birthCertificateNumber);
     formData.append('parentsId', parentsId);
+    formData.append('secondarySchool', secondarySchool);
+    formData.append('admissionNumber', admissionNumber);
     formData.append('ward', ward);
     formData.append('location', location);
     formData.append('subLocation', subLocation);
@@ -153,6 +194,8 @@ const Contacts = () => {
     setPrimarySchool('');
     setBirthCertificateNumber('');
     setParentsId('');
+    setSecondarySchool('');
+    setAdmissionNumber('');
     setWard('');
     setLocation('');
     setSubLocation('');
@@ -227,7 +270,7 @@ const Contacts = () => {
                   name='email'
                   value={email}
                   onChange={handleEmailChange}
-                  required
+                
                 />
                 {emailError && <p className="text-red-500">{emailError}</p>}
               </div>
@@ -285,6 +328,33 @@ const Contacts = () => {
                   value={parentsId}
                   onChange={(e) => setParentsId(e.target.value)}
                   required
+                />
+              </div>
+              <div className='flex flex-col space-y-2'>
+                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='secondary-school'>
+                  Secondary School Admitted <span className="text-red-500">*</span>
+                </label>
+                <input
+                  className='text-black border rounded p-2'
+                  type='text'
+                  id='secondary-school'
+                  name='secondary-school'
+                  value={secondarySchool}
+                  onChange={(e) => setSecondarySchool(e.target.value)}
+                  required
+                />
+              </div>
+              <div className='flex flex-col space-y-2'>
+                <label className='text-gray-500 font-semibold roboto-thin' htmlFor='admission-number'>
+                  Admission Number
+                </label>
+                <input
+                  className='text-black border rounded p-2'
+                  type='text'
+                  id='admission-number'
+                  name='admission-number'
+                  value={admissionNumber}
+                  onChange={(e) => setAdmissionNumber(e.target.value)}
                 />
               </div>
               <div className='flex flex-col space-y-2'>

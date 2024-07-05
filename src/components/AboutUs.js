@@ -144,31 +144,32 @@ const AboutUs = () => {
             </div>
             <h2 className='font-semibold mt-4'>Promoting scholarly achievement.</h2>
             <p className='text-center'>
-              Hon. Osoro care club through NGCDF South Mugirango Constituency we are dedicated to nurturing the potential of students who face financial hardships yet demonstrate exceptional academic promise. We are committed to providing these deserving individuals with the resources they need to succeed, ensuring that financial barriers do not hinder their educational aspirations. Through our comprehensive support system, we offer scholarships, mentoring, and essential educational tools to help students thrive academically and personally. We believe in the transformative power of education and are committed to fostering a community where every student has the opportunity to achieve their dreams and contribute meaningfully to society. Join us in our mission to empower the next generation of leaders and innovators.
-            </p>
+            Hon. Osoro Care Club, through NGCDF South Mugirango Constituency,<b className='italic text-yellow-500 font-bold'> offers scholarships covering full tuition fees from Form One to Form Four, as approved by the National Government. We are dedicated to nurturing the potential of students who have achieved 350 Marks in KCPE from public institutions within South Mugirango Constituency. These students, identified as vulnerable and verified by local administration and the NG-CDF Bursary Sub-Committee, face financial hardships but demonstrate exceptional academic promise.</b>
+We are committed to providing these deserving individuals with the resources they need to succeed, ensuring that financial barriers do not hinder their educational aspirations. Our comprehensive support system includes scholarships, mentoring, and essential educational tools to help students thrive academically and personally. We believe in the transformative power of education and are dedicated to fostering a community where every student has the opportunity to achieve their dreams and contribute meaningfully to society.
+Join us in our mission to empower the next generation of leaders and innovators.            </p>
           </div>
           <div className='bg-gray-100 roboto-thin py-10 fade-in fade-in-active'>
             <div className='container mx-auto flex flex-col md:flex-row gap-8 px-4'>
               <div className='flex-1'>
-                <div className='testimonial-card bg-white p-6 rounded-lg shadow-md text-center mb-8'>
+                <div className='testimonial-card bg-white p-6 rounded-lg shadow-md text-center pb-16 mb-8'>
                   <img className='w-52 mx-auto mb-4' src={image2} alt=''/>
                   <h2 className='text-xl font-semibold mb-2'>Transformation</h2>
                   <p className='text-gray-700 mb-4'>Osoro Care Club transforms the lives of bright, underprivileged students by removing financial barriers and fostering academic excellence. We are proud to support this vital initiative, empowering future leaders and ensuring every student has the opportunity to succeed.</p>
-                  <h3 className='text-gray-800 font-medium'>Cs. Ezekiel Machogu & Hon. Silvanus Osoro</h3>
+                  <h3 className='text-gray-800 font-bold mt-8'>Cs. Ezekiel Machogu & Hon. Silvanus Osoro</h3>
                 </div>
                 <div className='testimonial-card bg-white p-6 rounded-lg shadow-md text-center'>
                   <img className='w-52 mx-auto mb-4' src={image3} alt=''/>
                   <h2 className='text-xl font-semibold mb-2'>Caring & Determination</h2>
-                  <p className='text-gray-700 mb-4'>Osoro Care Club is a beacon of hope, providing vital support to talented students in need. Through scholarships and mentorship, we empower future leaders and innovators. Together, we build a brighter, more equitable future for all.</p>
-                  <h3 className='text-gray-800 font-medium'>CDF Manager Mr. Benson Barongo</h3>
+                  <p className='text-gray-700 mb-4'>Osoro Care Club through NG-CDF South Mugirango Constituency is a beacon of hope, providing vital support to talented students in need. Through scholarships and mentorship, we empower future leaders and innovators. Together, we build a brighter, more equitable future for all.</p>
+                  <h3 className='text-gray-800 font-bold'>Constituency Office Manager Mr. Benson Barongo</h3>
                 </div>
               </div>
               <div className='flex-1'>
-                <div className='testimonial-card bg-white p-6 rounded-lg shadow-md text-center pb-7'>
+                <div className='testimonial-card bg-white p-6 rounded-lg shadow-md text-center pb-9'>
                   <img className='w-52 h-40 mx-auto mb-4' src={image4} alt=''/>
                   <h2 className='text-xl font-semibold mb-2'>Grateful Parent</h2>
-                  <p className='text-gray-700'>A heartfelt thank you to our MP for this generous donation. CareClub transforms lives, ensuring my child and many others have the support they need to excel academically and build a brighter future.</p>
-                  <h3 className='text-gray-800 font-medium mt-8'>Mp. Osoro, Parent & Son, and Fund Manager Mr. Onyango</h3>
+                  <p className='text-gray-700'>A heartfelt thank you to our MP for this generous donation. Osorocareclub through NG-CDF South Mugirango Constituency transforms lives, ensuring my child and many others have the support they need to excel academically and build a brighter future.</p>
+                  <h3 className='text-gray-800 mt-8 font-bold'>Mp. Osoro, Parent & Son, and Fund Account Manager Mr. Onyango</h3>
                 </div>
               </div>
             </div>
@@ -213,14 +214,14 @@ const AboutUs = () => {
                 <img className='mx-auto h-32 w-32' src={image5} alt='' />
               </div>
               <h2 className='text-2xl'>Mission</h2>
-              <p>Empowering underprivileged students through education for a brighter future and equitable opportunities.</p>
+              <p className='p-4'>Empowering underprivileged students through education for a brighter future and equitable opportunities.</p>
             </div>
             <div className='vision-section mt-9'>
               <div className='image-container'>
                 <img className='mx-auto' src={image6} alt='' />
               </div>
               <h2 className='text-2xl'>Vision</h2>
-              <p>Fostering a community where every student thrives academically and contributes meaningfully to society.</p>
+              <p className='p-4'>Fostering a community where every student thrives academically and contributes meaningfully to society.</p>
             </div>
           </div>
           <div className='block roboto-thin md:flex justify-between items-center text-center mb-16 mt-6 fade-in fade-in-active'>
@@ -229,10 +230,12 @@ const AboutUs = () => {
                 <img className='mx-auto w-32 h-32' src={image7} alt='' />
               </div>
               <h2 className='text-2xl'>Core Values</h2>
-              <ul className='text-center'>
+              <ul className='text-center p-4'>
                 <li>Equity</li>
                 <li>Integrity</li>
+                <li>Transparency</li>
                 <li>Empowerment</li>
+                <li>Accountability</li>
               </ul>
             </div>
             <div className='purpose-section mt-8 md:mt-0'>
@@ -240,7 +243,7 @@ const AboutUs = () => {
                 <img className='mx-auto w-32 h-32' src={image8} alt='' />
               </div>
               <h2 className='text-2xl'>Our Purpose</h2>
-              <p className=''>To break barriers, ignite potential, and empower every student to succeed.</p>
+              <p className='p-4'>To break barriers, ignite potential, and empower every student to succeed.</p>
             </div>
           </div>
         </div>
