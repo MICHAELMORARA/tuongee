@@ -17,7 +17,7 @@ const Navbar = () => {
       <div className='container mx-auto flex justify-between items-center'>
         <div className='flex items-center md:-ml-8'>
           <img className='w-16 h-16 rounded-full ' src={logo} alt=''/>
-          <h1 className='ml-2 w-56 text-sm text-white'>Hon Osoro-Care-Club NGCDF South Mugirango</h1>
+          <h1 className='ml-0 w-56 text-white'>Hon Osoro-Care-Club NGCDF South Mugirango</h1>
         </div>
         <div className='hidden md:flex space-x-4 -mr-8 bg-slate-800 rounded-full p-4'>
           <Link className='text-white hover:text-gray-400' to="/home">Home</Link>
