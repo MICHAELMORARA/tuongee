@@ -54,7 +54,7 @@ const Reviews = () => {
       )}
       {!loading && (
         <Slider {...settings}>
-          <div className=' roboto-thin md:p-2 p-6 md:-mt-3 '>
+          <div className=' roboto-thin md:p-2 p-4 md:-mt-3 '>
             <h2 className='text-black text-3xl  font-bold text-center'>What Beneficiaries Say</h2>
             <p className='italic md:-ml-3 mt-3'>With Osoro Care Club through NG-CDF South Mugirango, I feel reassured and supported every step of the way. Their dedication to providing top-notch care is unmatched. I highly appreciate their commitment to our well-being.</p>
             <img className='rounded-full w-44 h-44 mx-auto mt-7 md:mt-4' src={image13} alt=''/>

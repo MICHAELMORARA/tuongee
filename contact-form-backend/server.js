@@ -23,8 +23,8 @@ const transporter = nodemailer.createTransport({
   port: 465,
   secure: true, // true for 465, false for other ports
   auth: {
-    user: 'cdfsouthmugirangoscholarship@gmail.com',
-    pass:"dcntmyxplqpgbtzz" ,
+    user: 'cdfsouthmugirangoscholaship@gmail.com',
+    pass:"loxavtcdhsfyipqh" ,
   },
   tls: {
     rejectUnauthorized: false
@@ -46,7 +46,7 @@ app.post('/send', upload.single('file'), (req, res) => {
 
   const mailOptions = {
     from: `${fullName} <${email}>`, // Sender address
-    to: 'cdfsouthmugirangoscholarship@gmail.com',   // Receiver address
+    to: 'cdfsouthmugirangoscholaship@gmail.com',   // Receiver address
     subject: subject || 'Contact Form Submission',
     text: `
       Name: ${fullName}
