@@ -257,20 +257,35 @@ body {
 .image-container::before {
   content: '';
   position: absolute;
-  top: 20px; /* Adjust the top position as needed */
-  right: 20px; /* Adjust the right position as needed */
-  width: 16px; /* Increase the size for better visibility */
+  bottom: 10px; /* Positioned at the bottom as requested */
+  left: 50%;
+  width: 16px;
   height: 16px;
   background-color: red;
   border-radius: 50%;
-  transform: translate(50%, -50%);
+  transform: translateX(-50%);
   z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Added shadow for better visibility */
+  animation: pulse 2s infinite; /* Added animation to make it noticeable */
 }
 
-
-.image-container:hover::before {
-  background-color: darkred;
+/* Animation for the notification dot */
+@keyframes pulse {
+  0% {
+    transform: translateX(-50%) scale(1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.2);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
 }
+
+/* No hover state needed as the animation is always present */
 
 /* In App.css or the relevant CSS file */
 @import "~slick-carousel/slick/slick.css";
@@ -414,6 +429,10 @@ body {
 
 .modal-content {
   position: relative;
+}
+
+.mirror-overlay {
+  filter: brightness(0.9) saturate(0.9) contrast(1.05);
 }
 
 

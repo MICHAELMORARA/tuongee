@@ -8,37 +8,72 @@ import image16 from "./images/image16.png";
 import image17 from "./images/image17.png"; 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Rings } from 'react-loader-spinner'; // Import the Oval spinner component
+import { Rings } from 'react-loader-spinner';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faQuoteLeft, faQuoteRight, faStar } from '@fortawesome/free-solid-svg-icons';
 
 const Reviews = () => {
-  const [loading, setLoading] = useState(true); // State to track loading
+  const [loading, setLoading] = useState(true);
+  
   useEffect(() => {
-    // Simulate a timeout for loading
     const timeout = setTimeout(() => {
-      setLoading(false); // Set loading to false after timeout
-    }, 4000); // 2000 milliseconds = 2 seconds
+      setLoading(false);
+    }, 4000);
 
-    // Clean up the timeout to avoid memory leaks
     return () => clearTimeout(timeout);
-  }, []); // Run only once after component mounting
+  }, []);
 
   const settings = {
     dots: true,
+    dotsClass: "slick-dots custom-dots",
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: true, // Ensure arrows are enabled if you want navigation
-    autoplay: true, // Enable autoplay if needed
-    autoplaySpeed: 2000 // Set autoplay speed
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    pauseOnHover: true,
+    className: "testimonial-slider"
   };
 
+  const testimonials = [
+    {
+      quote: "With Osoro Care Club through NG-CDF South Mugirango, I feel reassured and supported every step of the way. Their dedication to providing top-notch care is unmatched. I highly appreciate their commitment to our well-being.",
+      image: image13,
+      name: "Mrs. Zipporah & Daughter",
+      rating: 5
+    },
+    {
+      quote: "Thanks to our able Hon. Silvanus Osoro, we feel more secure and well-cared for every day for inventing Osoro-Care-Club through NG-CDF South Mugirango Constituency to assist vulnerable students with full scholarship from form one to form four.",
+      image: image14,
+      name: "Mr. Onyango (Fund Account Manager)",
+      rating: 5
+    },
+    {
+      quote: "Osoro Care Club through NG-CDF South Mugirango Constituency has profoundly impacted our family's well-being, offering unparalleled support and care. Their dedication and professionalism are truly exceptional. We couldn't be happy without their service.",
+      image: image15,
+      name: "Top Achievers",
+      rating: 5
+    },
+    {
+      quote: "The level of care and support we receive from Osoro Care Club through NG-CDF South Mugirango Constituency is extraordinary. Their professional and compassionate approach has truly enhanced our lives. We couldn't ask for better service.",
+      image: image16,
+      name: "OCPD Thomas",
+      rating: 5
+    },
+    {
+      quote: "Dear Beneficiaries, Your trust and satisfaction inspire our relentless commitment to excellence. We are profoundly grateful for your continued support and look forward to serving you with unwavering dedication and care. Warm regards,",
+      image: image17,
+      name: "Hon. Silvanus Onyiego Osoro",
+      rating: 5
+    }
+  ];
+
   return (
-    <div className="relative h-screen w-screen md:mt-6">
-    <div className="slider-container pt-40 pb-36 ">
+    <div className="relative mt-12 min-h-screen bg-gradient-to-b from-white to-slate-100">
       {loading && (
         <div className="absolute inset-0 flex justify-center items-center bg-black" style={{ height: '100vh' }}>
-          {/* Display a red background and the Oval spinner */}
           <div className="spinner-container">
             <Rings
               visible={true}
@@ -52,41 +87,115 @@ const Reviews = () => {
           </div>
         </div>
       )}
+      
       {!loading && (
-        <Slider {...settings}>
-          <div className=' roboto-thin md:p-2 p-4 md:-mt-3 '>
-            <h2 className='text-black text-3xl  font-bold text-center'>What Beneficiaries Say</h2>
-            <p className='italic md:-ml-3 mt-3'>With Osoro Care Club through NG-CDF South Mugirango, I feel reassured and supported every step of the way. Their dedication to providing top-notch care is unmatched. I highly appreciate their commitment to our well-being.</p>
-            <img className='rounded-full w-44 h-44 mx-auto mt-7 md:mt-4' src={image13} alt=''/>
-            <h3 className='text-black font-semibold italic mt-8 md:mt-4'>Mrs. Zipporah & Daughter</h3>
+        <div className="py-16 px-4 md:px-8 max-w-6xl mx-auto">
+          <div className="text-center mb-6">
+            <h1 className="text-3xl md:text-4xl font-bold text-slate-800 relative inline-block">
+              <span className="relative z-10">Testimonials</span>
+              <span className="absolute -bottom-2 left-0 right-0 h-2 bg-slate-800 opacity-70 rounded-full swing-animation"></span>
+            </h1>
+            <p className="text-slate-600 mt-4 max-w-2xl mx-auto">
+              Hear what our beneficiaries have to say about the impact of our initiatives and support.
+            </p>
           </div>
-          <div className=' roboto-thin md:p-2 p-6 md:-mt-7'>
-            <h2 className='text-black text-2xl md:mt-6 font-bold text-center'>What Beneficiaries Say</h2>
-            <p className='italic mt-3'>Thanks to our able Hon. Silvanus Osoro, we feel more secure and well-cared for every day for inventing Osoro-Care-Club through NG-CDF South Mugirango Constituency to assist vulnerable students with full scholarship from form one to form four.</p>
-            <img className='rounded-full w-44 h-44 mx-auto mt-7 md:mt-4' src={image14} alt=''/>
-            <h3 className='text-black font-semibold italic mt-8 md:mt-4'>Mr. Onyango (Fund Account Manager) </h3>
+          
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <Slider {...settings}>
+              {testimonials.map((testimonial, index) => (
+                <div key={index} className="outline-none">
+                  <div className="p-6 md:p-12 flex flex-col items-center">
+                    <div className="mb-6 relative">
+                      <img 
+                        className="rounded-full h-32 w-32 md:h-40 md:w-40 object-cover border-4 border-slate-100 shadow-md" 
+                        src={testimonial.image} 
+                        alt={testimonial.name}
+                      />
+                      <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-slate-800 text-white px-4 py-1 rounded-full text-sm font-medium">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <FontAwesomeIcon key={i} icon={faStar} className="text-yellow-300 mr-1" />
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div className="text-center mb-6">
+                      <h3 className="text-xl md:text-2xl font-bold text-slate-800">{testimonial.name}</h3>
+                      <div className="h-1 w-16 bg-slate-800 mx-auto mt-2 rounded-full swing-animation"></div>
+                    </div>
+                    
+                    <div className="relative">
+                      <FontAwesomeIcon icon={faQuoteLeft} className="absolute -top-4 -left-2 text-slate-300 text-3xl opacity-50" />
+                      <p className="text-slate-700 text-lg italic leading-relaxed max-w-2xl mx-auto text-center px-6">
+                        {testimonial.quote}
+                      </p>
+                      <FontAwesomeIcon icon={faQuoteRight} className="absolute -bottom-4 -right-2 text-slate-300 text-3xl opacity-50" />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </Slider>
           </div>
-          <div className=' roboto-thin md:p-2 p-6 md:-mt-7'>
-            <h2 className='text-black text-2xl md:mt-6 font-bold text-center'>What Beneficiaries Say</h2>
-            <p className='italic mt-3'>Osoro Care Club through NG-CDF South Mugirango Constituency has profoundly impacted our family's well-being, offering unparalleled support and care. Their dedication and professionalism are truly exceptional. We couldn't be happy without their service.</p>
-            <img className='rounded-full w-44 h-44 mx-auto mt-7 md:mt-4' src={image15} alt=''/>
-            <h3 className='text-black font-semibold mt-8 md:mt-4'>Top Achievers</h3>
+
+          <div className="mt-16 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4">
+              Join Our Community of Supporters
+            </h2>
+            <p className="text-slate-600 max-w-2xl mx-auto mb-8">
+              Experience the impact of our work firsthand. Your support helps us continue 
+              making a difference in the lives of many across South Mugirango.
+            </p>
+            <button className="bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
+              Get Involved
+            </button>
           </div>
-          <div className=' roboto-thin md:p-6 p-6 md:-mt-7'>
-            <h2 className='text-black text-2xl font-bold text-center'>What Beneficiaries Say</h2>
-            <p className='italic mt-3'>The level of care and support we receive from Osoro Care Club through NG-CDF South Mugirango Constituency is extraordinary. Their professional and compassionate approach has truly enhanced our lives. We couldn't ask for better service.</p>
-            <img className='rounded-full w-44 h-44 mx-auto mt-7 md:mt-4' src={image16} alt=''/>
-            <h3 className='text-black font-semibold italic mt-8 md:mt-4'>OCPD Thomas</h3>
-          </div>
-          <div className=' roboto-thin md:p-6 p-7 md:-mt-7'>
-            <h2 className='text-black text-2xl font-bold text-center'>What Beneficiaries Say</h2>
-            <p className='italic mt-2'>Dear Beneficiaries, Your trust and satisfaction inspire our relentless commitment to excellence. We are profoundly grateful for your continued support and look forward to serving you with unwavering dedication and care. Warm regards,</p>
-            <img className='rounded-full w-44 h-44 mx-auto mt-7 md:mt-4' src={image17} alt=''/>
-            <h3 className='text-black font-semibold italic mt-8 md:mt-4'>Hon. Silvanus Onyiego Osoro</h3>
-          </div>
-        </Slider>
+        </div>
       )}
-    </div>
+      
+      <style jsx>{`
+        @keyframes swing {
+          0% { transform: translateX(-5px); }
+          50% { transform: translateX(5px); }
+          100% { transform: translateX(-5px); }
+        }
+        
+        .swing-animation {
+          animation: swing 3s ease-in-out infinite;
+        }
+        
+        .custom-dots {
+          bottom: -40px;
+        }
+        .custom-dots li button:before {
+          font-size: 12px;
+          color: #1e293b; /* Updated to slate-800 */
+          opacity: 0.5;
+        }
+        .custom-dots li.slick-active button:before {
+          color: #1e293b; /* Updated to slate-800 */
+          opacity: 1;
+        }
+        .testimonial-slider .slick-prev:before, 
+        .testimonial-slider .slick-next:before {
+          color: #1e293b; /* Updated to slate-800 */
+          font-size: 26px;
+        }
+        .testimonial-slider .slick-prev {
+          left: -40px;
+        }
+        .testimonial-slider .slick-next {
+          right: -40px;
+        }
+        @media (max-width: 768px) {
+          .testimonial-slider .slick-prev {
+            left: -10px;
+            z-index: 1;
+          }
+          .testimonial-slider .slick-next {
+            right: -10px;
+            z-index: 1;
+          }
+        }
+      `}</style>
     </div>
   );
 }

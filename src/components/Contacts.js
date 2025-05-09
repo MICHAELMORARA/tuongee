@@ -234,15 +234,18 @@ const Contacts = () => {
               />
             </div>
           )}
-          <div className="flex-grow md:-mt-28 ">
-            <img 
-              src={image18} 
-              alt="" 
-              className="object-cover w-full" 
-            />
+          <div className="flex-grow md:-mt-28">
+            {/* Modified image container with reduced height */}
+            <div className="relative overflow-hidden" style={{ maxHeight: '1000px' }}>
+              <img 
+                src={image18} 
+                alt="" 
+                className="object-cover w-full mirror-overlay object-top" 
+              />
+            </div>
           </div>
   
-          <div className='max-w-80  bg-white mt-6  px-2 pb-6  md:px-6 rounded-lg shadow-md text-start mb-8 md:max-w-2xl mx-auto hover:text-black'>
+          <div className='max-w-80  bg-white mt-8  px-2 pb-6  md:px-6 rounded-lg shadow-md text-start mb-8 md:max-w-2xl mx-auto hover:text-black'>
             <img className='md:w-auto md:mx-auto  mb-4' src={image20} alt='' />
             <h2 className='text-5xl mt-3 roboto-thin mb-6'>Contact <span className='font-bold text-5xl roboto-thin text-black'>Us</span></h2>
             <form className='space-y-4' onSubmit={handleSubmit}>
