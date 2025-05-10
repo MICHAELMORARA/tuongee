@@ -92,7 +92,7 @@ const Home = () => {
                 </div>
                 
                 {/* CTA Buttons - Left aligned on small screens with margin */}
-                <div className="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0 mt-16 md:mt-8 fade-in-up animation-delay-500 ml-2 md:ml-0">
+                <div className="flex flex-col mb-3 md:flex-row md:space-x-6 space-y-4 md:space-y-0 mt-16 md:mt-8 fade-in-up animation-delay-500 ml-2 md:ml-0">
                   <Link 
                     to="/aboutus" 
                     className="w-48 md:w-auto bg-slate-700 hover:bg-slate-600 text-white px-6 py-3 rounded-md shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-between group"
@@ -107,7 +107,7 @@ const Home = () => {
                     to="/contacts" 
                     className="w-48 md:w-auto bg-green-600 hover:bg-green-500 text-white px-6 py-3 rounded-md shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-between group"
                   >
-                    <span className="font-semibold md:mb-2">Let's Chat</span>
+                    <span className="font-semibold ">Let's Chat</span>
                     <span className="ml-2 w-7 h-7 rounded-full bg-white flex items-center justify-center transition-all duration-300 group-hover:bg-green-800">
                       <FontAwesomeIcon icon={faArrowRight} className="text-black group-hover:text-white" />
                     </span>
