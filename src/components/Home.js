@@ -91,24 +91,24 @@ const Home = () => {
                   </div>
                 </div>
                 
-                {/* CTA Buttons */}
-                <div className="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0 mt-8 fade-in-up animation-delay-500">
+                {/* CTA Buttons - Updated for small screens */}
+                <div className="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0 mt-12 sm:mt-8 fade-in-up animation-delay-500">
                   <Link 
                     to="/aboutus" 
-                    className="bg-slate-700 hover:bg-slate-600 text-white px-8 py-4 rounded-md shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-between group"
+                    className="mx-auto md:mx-0 w-48 md:w-auto bg-slate-700 hover:bg-slate-600 text-white px-6 py-3 rounded-md shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-between group"
                   >
                     <span className="font-semibold">Learn More</span>
-                    <span className="ml-4 w-8 h-8 rounded-full bg-white flex items-center justify-center transition-all duration-300 group-hover:bg-slate-800">
+                    <span className="ml-2 w-7 h-7 rounded-full bg-white flex items-center justify-center transition-all duration-300 group-hover:bg-slate-800">
                       <FontAwesomeIcon icon={faArrowRight} className="text-black group-hover:text-white" />
                     </span>
                   </Link>
                   
                   <Link 
                     to="/contacts" 
-                    className="bg-green-600 hover:bg-green-500 text-white px-8 py-4 rounded-md shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-between group"
+                    className="mx-auto md:mx-0 w-48 md:w-auto bg-green-600 hover:bg-green-500 text-white px-6 py-3 rounded-md shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-between group"
                   >
                     <span className="font-semibold">Let's Chat</span>
-                    <span className="ml-4 w-8 h-8 rounded-full bg-white flex items-center justify-center transition-all duration-300 group-hover:bg-green-800">
+                    <span className="ml-2 w-7 h-7 rounded-full bg-white flex items-center justify-center transition-all duration-300 group-hover:bg-green-800">
                       <FontAwesomeIcon icon={faArrowRight} className="text-black group-hover:text-white" />
                     </span>
                   </Link>
