@@ -107,7 +107,7 @@ const Home = () => {
                     to="/contacts" 
                     className="w-48 md:w-auto bg-green-600 hover:bg-green-500 text-white px-6 py-3 rounded-md shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-between group"
                   >
-                    <span className="font-semibold">Let's Chat</span>
+                    <span className="font-semibold md:mb-2">Let's Chat</span>
                     <span className="ml-2 w-7 h-7 rounded-full bg-white flex items-center justify-center transition-all duration-300 group-hover:bg-green-800">
                       <FontAwesomeIcon icon={faArrowRight} className="text-black group-hover:text-white" />
                     </span>
