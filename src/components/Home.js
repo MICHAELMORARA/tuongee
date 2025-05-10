@@ -38,7 +38,7 @@ const Home = () => {
         )}
         
         {!loading && (
-          <div className="relative mt-14 h-full roboto-thin">
+          <div className="relative mt-20 md:mt-14 h-full roboto-thin">
             {/* Background Image with Overlay */}
             <div className="absolute inset-0">
               <img 
@@ -91,11 +91,11 @@ const Home = () => {
                   </div>
                 </div>
                 
-                {/* CTA Buttons - Updated for small screens */}
-                <div className="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0 mt-12 sm:mt-8 fade-in-up animation-delay-500">
+                {/* CTA Buttons - Left aligned on small screens with margin */}
+                <div className="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0 mt-16 md:mt-8 fade-in-up animation-delay-500 ml-2 md:ml-0">
                   <Link 
                     to="/aboutus" 
-                    className="mx-auto md:mx-0 w-48 md:w-auto bg-slate-700 hover:bg-slate-600 text-white px-6 py-3 rounded-md shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-between group"
+                    className="w-48 md:w-auto bg-slate-700 hover:bg-slate-600 text-white px-6 py-3 rounded-md shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-between group"
                   >
                     <span className="font-semibold">Learn More</span>
                     <span className="ml-2 w-7 h-7 rounded-full bg-white flex items-center justify-center transition-all duration-300 group-hover:bg-slate-800">
@@ -105,7 +105,7 @@ const Home = () => {
                   
                   <Link 
                     to="/contacts" 
-                    className="mx-auto md:mx-0 w-48 md:w-auto bg-green-600 hover:bg-green-500 text-white px-6 py-3 rounded-md shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-between group"
+                    className="w-48 md:w-auto bg-green-600 hover:bg-green-500 text-white px-6 py-3 rounded-md shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-between group"
                   >
                     <span className="font-semibold">Let's Chat</span>
                     <span className="ml-2 w-7 h-7 rounded-full bg-white flex items-center justify-center transition-all duration-300 group-hover:bg-green-800">
